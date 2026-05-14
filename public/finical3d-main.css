@@ -558,6 +558,7 @@ nav.scrolled {
 
 .stat {
 	position: relative;
+	text-align:center;
 }
 
 .stat-number {
@@ -566,6 +567,7 @@ nav.scrolled {
 	color: var(--accent);
 	display: block;
 	margin-bottom: 5px;
+	text-align: center;
 }
 
 .stat-label {
@@ -573,6 +575,7 @@ nav.scrolled {
 	text-transform: uppercase;
 	letter-spacing: 1px;
 	color: var(--text-muted);
+	text-align: center;
 }
 
 .cta-group {
@@ -597,6 +600,7 @@ nav.scrolled {
 .cta-button.primary {
 	background: var(--accent);
 	color: white;
+	border-radius: 4px;
 }
 
 .cta-button.primary::before {
@@ -627,6 +631,7 @@ nav.scrolled {
 	color: white;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 	backdrop-filter: blur(10px);
+	border-radius: 4px;
 }
 
 .cta-button.outline:hover {
@@ -1032,7 +1037,7 @@ nav.scrolled {
 
 /* Featured Section */
 .featured {
-	padding: 100px 50px 100px;
+	padding: 100px 50px 40px;
 	background: var(--bg-section);
 	position: relative;
 	overflow: hidden;
@@ -1062,7 +1067,7 @@ nav.scrolled {
 	grid-template-columns: 1fr 1fr;
 	gap: 80px;
 	align-items: center;
-	margin-bottom: 100px;
+	margin-bottom: 10px;
 }
 
 .featured-content h2 {
@@ -1795,6 +1800,7 @@ footer {
 
 	.stat-number {
 		font-size: 28px;
+		text-align: center;
 	}
 
 	.hero-right {
