@@ -1,0 +1,137 @@
+---
+const title = "About Finical 3D";
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{title}</title>
+    <link rel="stylesheet" href="/templatemo-noir-fashion.css">
+</head>
+<body>
+    <Nav />
+
+    <section class="about-hero">
+        <div class="hero-bg"></div>
+        <div class="about-hero-content">
+            <h1 class="hero-title">
+                <span class="line"><span>About</span></span>
+                <span class="line"><span class="accent">Finical 3D</span></span>
+            </h1>
+            <p class="hero-description">
+                A New Zealand owned studio pushing the boundaries of 3D printing, scanning, and CAD design.
+            </p>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="featured-container">
+
+            <div class="featured-hero">
+                <div class="featured-content">
+                    <span class="label">Who We Are</span>
+                    <h2>Our Mission</h2>
+                    <p>We are dedicated to pushing the boundaries of 3D printing and CAD design, creating solutions that inspire and empower our clients. Based in Christchurch, we bring precision and creativity to every project.</p>
+                    <h2>Members</h2>
+                    <p>Matty - Founder & Lead Designer</p>
+                    <img src="/images/matty.avif" alt="Matty" style="width: 150px; border-radius: 50%; margin: 20px 0;">
+                    <p>Proven 3D skills and experience in the automotive industry. Specializing in 3D scanning and reverse engineering alongside 3D printing prototypes and products for manufacture.</p>
+                    <a href="/#contact" class="feature-cta">Get In Touch</a>
+                </div>
+                <div class="featured-image-section">
+                    <div class="featured-image-grid">
+                        <div class="featured-img">
+                            <img src="/images/3dprint1.avif">
+                        </div>
+                        <div class="featured-img">
+                            <img src="/images/3dprint2.avif">
+                        </div>
+                        <div class="featured-img">
+                            <img src="/images/3dprint3.avif">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-highlights" style="margin-top: 60px;">
+                <div class="highlight-item">
+                    <div class="highlight-icon">🖨️</div>
+                    <div class="highlight-title">3D Printing</div>
+                    <div class="highlight-desc">Custom FDM and resin printing services for prototypes and end-use parts</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">📐</div>
+                    <div class="highlight-title">CAD Design</div>
+                    <div class="highlight-desc">Reverse engineering and original CAD modelling for any application</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🔍</div>
+                    <div class="highlight-title">3D Scanning</div>
+                    <div class="highlight-desc">High-accuracy scanning to capture real-world objects as digital models</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🌱</div>
+                    <div class="highlight-title">Sustainable</div>
+                    <div class="highlight-desc">Closed-loop filament recycling and eco-conscious manufacturing</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">🇳🇿</div>
+                    <div class="highlight-title">NZ Owned</div>
+                    <div class="highlight-desc">Proudly local, serving clients across New Zealand</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-icon">👑</div>
+                    <div class="highlight-title">Premium Quality</div>
+                    <div class="highlight-desc">Only the finest filaments and resins used in every print</div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <Footer />
+
+    <script is:inline src="/templatemo-noir-scripts.js"></script>
+</body>
+</html>
+
+<style>
+    .about-hero {
+        min-height: 50vh;
+        position: relative;
+        overflow: hidden;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .about-hero-content {
+        position: relative;
+        z-index: 2;
+        padding: 140px 50px 80px;
+        max-width: 800px;
+    }
+
+    .feature-highlights {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    @media (max-width: 768px) {
+        .feature-highlights {
+            grid-template-columns: 1fr;
+        }
+
+        .about-hero-content {
+            padding: 120px 20px 60px;
+        }
+    }
+</style>

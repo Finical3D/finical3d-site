@@ -1,5 +1,11 @@
+---
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+---
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,44 +17,9 @@ https://templatemo.com/tm-599-noir-fashion
 -->
 </head>
 <body>
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="logo-link">
-                <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#33b4ff;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <polygon points="50,10 20,50 50,90 80,50" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
-                    <circle cx="50" cy="50" r="5" fill="url(#logoGrad)"/>
-                </svg>
-                <span class="logo-text">Finical 3D</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#showcases" class="nav-link">Showcases</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-                <li><a href="#contact" class="nav-cta">Get In Touch</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+    
+    <Nav />
 
-    <div class="mobile-nav" id="mobileNav">
-        <ul class="mobile-nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#showcases">Showcases</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
 
     <section class="hero" id="home">
         <div class="hero-bg"></div>
@@ -392,62 +363,8 @@ https://templatemo.com/tm-599-noir-fashion
         </div>
     </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h3>Finical 3D</h3>
-                <p>Reimagining 3D Design & Printing for the Future</p>
-                <!--
-				<div class="social-links">
-                    <a href="#" class="social-link">f</a>
-                    <a href="#" class="social-link">t</a>
-                    <a href="#" class="social-link">i</a>
-                    <a href="#" class="social-link">p</a>
-                </div>
-				-->
-            </div>
-			<!--
-            <div class="footer-column">
-                <h4>Shop</h4>
-                <ul>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Women</a></li>
-                    <li><a href="#">Men</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Sale</a></li>
-                </ul>
-            </div>
-			-->
-            <div class="footer-column">
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Shipping Info</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Sustainability</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Finical 3D. All rights reserved.</p>
-            <!--
-			<div class="payment-methods">
-                <div class="payment-icon">VISA</div>
-                <div class="payment-icon">MC</div>
-                <div class="payment-icon">AMEX</div>
-                <div class="payment-icon">PAY</div>
-            </div>
-			-->
-        </div>
-    </footer>
+    
+    <Footer />
 
     <script is:inline src="/templatemo-noir-scripts.js"></script>
 </body>
