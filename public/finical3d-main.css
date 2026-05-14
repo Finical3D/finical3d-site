@@ -1803,11 +1803,16 @@ footer {
 	.hero-stats {
 		justify-content: center;
 		gap: 30px;
+		max-width:360px;
+		margin: 20px auto;
+		padding: 20px;
 	}
 
 	.stat-number {
 		font-size: 28px;
 		text-align: center;
+		width:auto;
+		max-width: auto;
 	}
 
 	.hero-right {
@@ -1859,10 +1864,11 @@ footer {
 	.featured-container {
 		grid-template-columns: 1fr;
 		gap: 30px;
+		text-align: center;
 	}
 
 	.featured-content {
-		padding: 25px;
+		padding: 5px;
 	}
 
 	.featured-content h2 {
@@ -1871,6 +1877,11 @@ footer {
 
 	.feature-timeline {
 		padding: 20px;
+	}
+
+	.feature-cta-wrapper {
+		margin-top:0;
+		margin-bottom: 40px;
 	}
 
 	.timeline-item {
@@ -1934,6 +1945,7 @@ footer {
         overflow-x: scroll !important;
         scroll-snap-type: x mandatory;
         gap: 15px;
+		margin-bottom:0;
         padding: 10px 20px 20px;
         scrollbar-width: none;
         -ms-overflow-style: none;
@@ -1946,9 +1958,9 @@ footer {
     }
 
     .highlight-item {
-        flex: 0 0 85vw !important;
-        min-width: 85vw !important;
-        width: 85vw !important;
+        flex: 0 0 55vw !important;
+        min-width: 55vw !important;
+        width: 55vw !important;
         scroll-snap-align: start;
         box-sizing: border-box;
     }
@@ -1959,7 +1971,7 @@ footer {
 @media (max-width: 768px) {
 footer {
 	background: #000;
-	padding: 80px 50px 30px;
+	padding: 80px 50px 0px;
 	border-top: 1px solid #222;
 
 }
