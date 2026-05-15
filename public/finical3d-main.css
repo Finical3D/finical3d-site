@@ -95,15 +95,47 @@ nav.scrolled {
 	margin-right: 10px;
 }
 
+/* Isolated box model to anchor absolute coordinates cleanly */
+.logo-shadow-wrap {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+}
+
 .logo-text {
+	position: relative;
 	font-size: 40px;
 	font-weight: 900;
-	margin-bottom:3px;
+	margin-bottom: 3px;
 	letter-spacing: -2px;
 	background: linear-gradient(135deg, #fff, var(--accent));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
+	display: block; /* Changes from inline to clear spacing blocks */
+}
+
+.logo-text::after {
+	content: attr(data-text);
+	position: absolute;
+	left: 3px;  /* Moves shadow 3px right over main text */
+	top: 3px;   /* Moves shadow 3px down over main text */
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	
+	/* Reset background clip layers completely */
+	background: none !important;
+	-webkit-background-clip: initial !important;
+	background-clip: initial !important;
+
+	/* Render custom cyan shadow tone onto text mask */
+	color: rgba(39, 241, 255, 0.5) !important;
+	-webkit-text-fill-color: rgba(39, 241, 255, 0.5) !important;
+
+	/* Soft drop shadow glow edges */
+	filter: blur(2px);
+	pointer-events: none;
 }
 
 .nav-links {
@@ -181,6 +213,62 @@ nav.scrolled {
 
 .nav-cta::before {
 	display: none;
+}
+
+/* Container holds the list of grid items stacked vertically */
+.tools-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Space between each equipment row */
+    margin: 40px 0;
+}
+
+/* Individual layout row */
+.grid-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px; /* Space between text column and picture circle */
+}
+
+/* Alternating flip layout style: targets every even entry */
+.grid-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Text box alignment configuration */
+.grid-text {
+    flex: 1;
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--accent, #33b4ff);
+    margin-top: 10px;
+}
+
+/* Image circle element optimization */
+.grid-img {
+    width: 500px; /* Upscaled from 150px for grid presence */
+    height: 420px;
+    object-fit: cover;
+    border-radius: 5%;
+    flex-shrink: 0; /* Prevents flexbox from squeezing the circle shape */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2); /* Enhances depth */
+}
+
+/* Responsive breakpoint handling for small mobile views */
+@media (max-width: 768px) {
+    .grid-item, .grid-item:nth-child(even) {
+        flex-direction: column-reverse; /* Places picture directly over the text title */
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .grid-img {
+        width: 150px;
+        height: 150px;
+    }
 }
 
 /* ─── Tablet (769px – 1070px) ──────────────────────────────────────────────── */
