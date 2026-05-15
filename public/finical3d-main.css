@@ -96,8 +96,9 @@ nav.scrolled {
 }
 
 .logo-text {
-	font-size: 28px;
+	font-size: 40px;
 	font-weight: 900;
+	margin-bottom:3px;
 	letter-spacing: -2px;
 	background: linear-gradient(135deg, #fff, var(--accent));
 	-webkit-background-clip: text;
@@ -451,7 +452,7 @@ nav.scrolled {
 
 .hero-left {
 	padding-right: 60px;
-	padding-top: 100px;
+	padding-top: 180px;
 	margin-top: auto;
 }
 
@@ -1763,7 +1764,7 @@ footer {
 
 	.hero-left {
 		padding-right: 0;
-		padding-top: 80px;
+		padding-top: 120px;
 		margin-top: 0;
 	}
 
@@ -2176,7 +2177,7 @@ footer {
 	}
 
 	.hero-left {
-		padding-top: 20px;
+		padding-top: 50px;
 	}
 
 	.hero-title {
