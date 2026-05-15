@@ -213,6 +213,7 @@ nav.scrolled {
 
 	.hero-title {
 		font-size: 60px;
+		text-transform: uppercase;
 	}
 
 	.hero-left {
@@ -396,7 +397,7 @@ nav.scrolled {
 	height: auto;
 	position: relative;
 	padding-bottom: 60px;
-	min-height: 100vh;
+	min-height: auto;
 	background: #000;
 }
 
@@ -486,6 +487,7 @@ nav.scrolled {
 
 .hero-title {
 	font-size: clamp(50px, 7vw, 90px);
+	text-transform: uppercase;
 	font-weight: 900;
 	line-height: 1.1;
 	margin-bottom: 25px;
@@ -1743,7 +1745,7 @@ footer {
 	/* ── Hero ── */
 	.hero {
 		/* Ensure content clears the fixed nav on all phone heights */
-		min-height: 100dvh; /* dynamic viewport height — avoids iOS address bar */
+		min-height: auto; /* dynamic viewport height — avoids iOS address bar */
 	}
 
 	.hero-container {
@@ -1768,6 +1770,7 @@ footer {
 	}
 
 	.hero-title {
+		text-transform: uppercase;
 		font-size: clamp(36px, 10vw, 58px);
 		word-break: break-word;
 		margin-bottom: 18px;
@@ -2100,6 +2103,7 @@ footer {
 
 @media (max-width: 390px) {
 	.hero-title {
+		text-transform: uppercase;
 		font-size: clamp(32px, 9.5vw, 42px);
 	}
 
