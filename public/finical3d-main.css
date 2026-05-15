@@ -38,7 +38,7 @@ section {
 }
 
 body {
-	font-family: 'Arial', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 	background: var(--bg-dark);
 	color: var(--text-light);
 	/* Prevent horizontal overflow on any phone */
@@ -608,6 +608,7 @@ nav.scrolled {
 	padding-right: 20px;
 	padding-bottom: 5px;
 	text-align:center;
+	
 }
 
 @keyframes slideUp {
@@ -1472,7 +1473,7 @@ nav.scrolled {
 	/* ≥16px prevents iOS auto-zoom */
 	font-size: 16px;
 	transition: all 0.3s ease;
-	font-family: 'Arial', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 	/* iOS rounds inputs by default — keep flat */
 	border-radius: 0;
 	-webkit-appearance: none;
@@ -1873,7 +1874,7 @@ footer {
 
 	.hero-title .accent {
 
-		background: linear-gradient(90deg, #33ff8f, #66ffff);
+		background: linear-gradient(135deg, #fff, var(--accent));
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
@@ -1882,7 +1883,10 @@ footer {
 		font-size: clamp(36px, 10vw, 58px);
 		word-break: break-word;
 		text-align:center;
-		
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: auto;
+
 	}
 
 	.hero-description {
