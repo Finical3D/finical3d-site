@@ -134,7 +134,7 @@ nav.scrolled {
 	-webkit-text-fill-color: rgba(39, 241, 255, 0.5) !important;
 
 	/* Soft drop shadow glow edges */
-	filter: blur(2px);
+	filter: blur(1px);
 	pointer-events: none;
 }
 
