@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms & Conditions — Finical 3D</title>
+  <link rel="stylesheet" href="/finical3d-main.css">
+  <style>
+    /* ── Page-specific styles ── */
+    .terms-hero {
+      padding: 140px 50px 60px;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .terms-hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(51,197,255,0.12) 0%, transparent 70%);
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .terms-hero-label {
+      display: inline-block;
+      padding: 7px 20px;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      animation: fadeIn 0.8s ease;
+    }
+
+    .terms-hero h1 {
+      font-size: clamp(36px, 6vw, 72px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: 1.05;
+      margin-bottom: 20px;
+      animation: slideUp 0.9s ease;
+    }
+
+    .terms-hero h1 span {
+      background: linear-gradient(90deg, #33ff8f, #33c5ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .terms-meta {
+      color: var(--text-muted);
+      font-size: 14px;
+      letter-spacing: 1px;
+      animation: fadeIn 1s ease 0.3s backwards;
+    }
+
+    /* ── Layout ── */
+    .terms-layout {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 50px 100px;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    /* ── Sticky sidebar TOC ── */
+    .terms-toc {
+      position: sticky;
+      top: 90px;
+    }
+
+    .toc-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 18px;
+      display: block;
+    }
+
+    .toc-list {
+      list-style: none;
+      border-left: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .toc-list li a {
+      display: block;
+      padding: 8px 0 8px 16px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      line-height: 1.4;
+      transition: all 0.2s ease;
+      border-left: 2px solid transparent;
+      margin-left: -1px;
+    }
+
+    .toc-list li a:hover,
+    .toc-list li a.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+    }
+
+    /* ── Content ── */
+    .terms-content {
+      color: var(--text-light);
+    }
+
+    .terms-intro {
+      background: rgba(51,197,255,0.05);
+      border: 1px solid rgba(51,197,255,0.15);
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin-bottom: 48px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.75);
+    }
+
+    .terms-intro strong {
+      color: var(--accent);
+    }
+
+    .terms-section {
+      margin-bottom: 52px;
+      scroll-margin-top: 100px;
+    }
+
+    .section-number {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .terms-section h2 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 20px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .terms-section p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.85;
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+
+    .terms-section ul,
+    .terms-section ol {
+      margin: 12px 0 18px 0;
+      padding-left: 22px;
+    }
+
+    .terms-section li {
+      color: rgba(255,255,255,0.72);
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+
+    .terms-section li::marker {
+      color: var(--accent);
+    }
+
+    .terms-section strong {
+      color: white;
+      font-weight: 600;
+    }
+
+    .terms-section a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .terms-section a:hover {
+      text-decoration: underline;
+    }
+
+    .highlight-box {
+      background: rgba(255,255,255,0.03);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 6px 6px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+      font-size: 14px;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.75;
+    }
+
+    .highlight-box strong {
+      color: white;
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+    }
+
+    .terms-divider {
+      border: none;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      margin: 0 0 52px 0;
+    }
+
+    /* ── Contact strip at bottom ── */
+    .terms-contact-strip {
+      background: rgba(51,197,255,0.06);
+      border: 1px solid rgba(51,197,255,0.15);
+      border-radius: 10px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 60px;
+    }
+
+    .terms-contact-strip h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .terms-contact-strip p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+
+    .terms-contact-strip a.cta-button {
+      padding: 14px 32px;
+      white-space: nowrap;
+    }
+
+    /* ── Animations (matching main site) ── */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(30px); opacity: 0; }
+      to   { transform: translateY(0);    opacity: 1; }
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 860px) {
+      .terms-hero {
+        padding: 120px 24px 48px;
+      }
+
+      .terms-layout {
+        grid-template-columns: 1fr;
+        padding: 40px 24px 70px;
+        gap: 40px;
+      }
+
+      .terms-toc {
+        position: static;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.07);
+        border-radius: 8px;
+        padding: 20px 24px;
+      }
+
+      .toc-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2px;
+        border-left: none;
+      }
+
+      .toc-list li a {
+        border-left: none;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+        padding: 8px 4px;
+        font-size: 12px;
+      }
+
+      .terms-contact-strip {
+        flex-direction: column;
+        text-align: center;
+        padding: 28px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .toc-list {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Navigation (matches main site) ── -->
+  <nav id="navbar" class="scrolled">
+    <div class="nav-container">
+      <a href="/" class="logo-link">
+        <svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#fff;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#33b4ff;stop-opacity:1"/>
+            </linearGradient>
+          </defs>
+          <polygon points="50,10 20,50 50,90 80,50" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
+          <circle cx="50" cy="50" r="5" fill="url(#logoGrad)"/>
+        </svg>
+        <span class="logo-text">Finical 3D</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/about" class="nav-link">About</a></li>
+        <li><a href="/contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="menu-toggle" id="menuToggle">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-links">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- ── Hero ── -->
+  <div class="terms-hero">
+    <div class="terms-hero-label">Legal</div>
+    <h1>Terms &amp; <span>Conditions</span></h1>
+    <p class="terms-meta">Effective date: 1 June 2026 &nbsp;·&nbsp; Finical 3D, Christchurch, New Zealand</p>
+  </div>
+
+  <!-- ── Body ── -->
+  <div class="terms-layout">
+
+    <!-- Sidebar TOC -->
+    <aside class="terms-toc">
+      <span class="toc-label">Contents</span>
+      <ul class="toc-list" id="tocList">
+        <li><a href="#s1">1. Agreement</a></li>
+        <li><a href="#s2">2. Services</a></li>
+        <li><a href="#s3">3. Quotes &amp; Pricing</a></li>
+        <li><a href="#s4">4. Orders &amp; Payment</a></li>
+        <li><a href="#s5">5. Design Files &amp; IP</a></li>
+        <li><a href="#s6">6. Client-Supplied Files</a></li>
+        <li><a href="#s7">7. Materials</a></li>
+        <li><a href="#s8">8. Production &amp; Turnaround</a></li>
+        <li><a href="#s9">9. Quality &amp; Tolerances</a></li>
+        <li><a href="#s10">10. Delivery &amp; Risk</a></li>
+        <li><a href="#s11">11. Returns &amp; Refunds</a></li>
+        <li><a href="#s12">12. Scanning Services</a></li>
+        <li><a href="#s13">13. Prohibited Uses</a></li>
+        <li><a href="#s14">14. Liability</a></li>
+        <li><a href="#s15">15. Consumer Guarantees</a></li>
+        <li><a href="#s16">16. Privacy</a></li>
+        <li><a href="#s17">17. Governing Law</a></li>
+        <li><a href="#s18">18. Changes</a></li>
+        <li><a href="#s19">19. Contact</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main content -->
+    <main class="terms-content">
+
+      <div class="terms-intro">
+        Please read these Terms and Conditions carefully before placing an order or using any service provided by <strong>Finical 3D</strong>. By submitting an enquiry, approving a quote, or placing an order, you agree to be bound by these terms. If you do not agree, please do not use our services.
+      </div>
+
+      <!-- 1 -->
+      <section class="terms-section" id="s1">
+        <span class="section-number">01</span>
+        <h2>Agreement to Terms</h2>
+        <p>These Terms and Conditions ("Terms") form a legally binding agreement between you ("Client", "you") and <strong>Finical 3D</strong>, a New Zealand sole trader operating in Christchurch, Canterbury ("Finical 3D", "we", "us"). These Terms apply to all 3D printing, 3D scanning, CAD design, filament recycling, and any associated consulting or delivery services provided by Finical 3D.</p>
+        <p>By placing an order — whether verbally, by email, via our website contact form, or through any other channel — you confirm that you have read, understood, and agree to these Terms.</p>
+        <p>If you are ordering on behalf of a business or organisation, you warrant that you have authority to bind that entity to these Terms.</p>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 2 -->
+      <section class="terms-section" id="s2">
+        <span class="section-number">02</span>
+        <h2>Services Offered</h2>
+        <p>Finical 3D provides the following services, subject to technical feasibility and capacity:</p>
+        <ul>
+          <li><strong>FDM 3D Printing</strong> — Fused Deposition Modelling using a range of thermoplastic filaments.</li>
+          <li><strong>Resin 3D Printing</strong> — MSLA/LCD resin printing for high-detail applications.</li>
+          <li><strong>3D Scanning</strong> — Blue laser scanning for reverse engineering, archival, and CAD reconstruction purposes.</li>
+          <li><strong>CAD Design &amp; Modelling</strong> — Custom part design, modification of existing models, and design-for-print optimisation.</li>
+          <li><strong>Filament Recycling</strong> — Reclamation and re-extrusion of compatible waste filament where feasible.</li>
+          <li><strong>Consulting</strong> — Technical advice on printability, material selection, design-for-manufacture, and related topics.</li>
+        </ul>
+        <p>We reserve the right to decline any order or enquiry without obligation to provide reasons, particularly where a request falls outside our capabilities, violates these Terms, or is otherwise deemed inappropriate.</p>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 3 -->
+      <section class="terms-section" id="s3">
+        <span class="section-number">03</span>
+        <h2>Quotes &amp; Pricing</h2>
+        <p>All prices are quoted in <strong>New Zealand Dollars (NZD)</strong> and are inclusive of GST (15%) unless otherwise stated.</p>
+        <ul>
+          <li>Quotes are provided in good faith based on the information supplied at the time of enquiry. A quote is valid for <strong>14 days</strong> from the date of issue unless otherwise noted.</li>
+          <li>Quotes are estimates only. Final pricing may vary if the supplied files differ materially from those described, or if additional print time, materials, or post-processing are required.</li>
+          <li>Complex, multi-component, or high-volume orders may require a separate written agreement.</li>
+          <li>Rush or expedited orders may incur a surcharge, which will be communicated in advance.</li>
+          <li>CAD design and consulting time is charged at an hourly rate as agreed prior to commencement. Minimum billable increments may apply.</li>
+          <li>Finical 3D reserves the right to update standard pricing at any time. Confirmed orders will not be affected by subsequent price changes.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 4 -->
+      <section class="terms-section" id="s4">
+        <span class="section-number">04</span>
+        <h2>Orders &amp; Payment</h2>
+        <p>An order is confirmed once Finical 3D has accepted it in writing (including by email) and any required deposit has been received.</p>
+        <ul>
+          <li><strong>Deposit:</strong> Orders over NZD $100 may require a deposit of up to 50% of the total quote before production commences. The deposit is non-refundable once printing has begun.</li>
+          <li><strong>Full payment</strong> is due prior to dispatch or collection of completed goods, unless a credit arrangement has been agreed in writing.</li>
+          <li>Accepted payment methods include bank transfer and any methods listed on our invoice. Payment terms are net 7 days from invoice date unless otherwise agreed.</li>
+          <li>Overdue invoices may incur a late payment fee of 2% per month on the outstanding balance, and we reserve the right to withhold goods until full payment is received.</li>
+          <li>Cancellations made after production has commenced will forfeit the deposit and may incur additional charges to cover material and labour costs already expended.</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>GST Notice</strong>
+          Finical 3D is registered for GST in New Zealand. GST (15%) is included in all quoted prices unless otherwise stated. A GST invoice will be issued on request.
+        </div>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 5 -->
+      <section class="terms-section" id="s5">
+        <span class="section-number">05</span>
+        <h2>Design Files &amp; Intellectual Property</h2>
+        <p><strong>Client-owned designs:</strong> Where you supply your own design files, you retain all intellectual property rights in those files. By submitting them, you grant Finical 3D a non-exclusive licence to use those files solely for the purpose of fulfilling your order.</p>
+        <p><strong>Finical 3D-created designs:</strong> Where Finical 3D creates original CAD models or designs on your behalf:</p>
+        <ul>
+          <li>Ownership of the final design files transfers to the Client upon receipt of full payment, unless otherwise agreed in writing.</li>
+          <li>Finical 3D retains the right to display the work in its portfolio and marketing materials unless the Client requests confidentiality in writing prior to order commencement.</li>
+          <li>Intermediate files, supports, toolpaths, and print profiles remain the property of Finical 3D.</li>
+        </ul>
+        <p><strong>Third-party IP:</strong> The Client is solely responsible for ensuring that any design, logo, character, brand, or other element submitted for printing does not infringe third-party intellectual property rights. Finical 3D reserves the right to refuse production of any design that appears to infringe copyright, trademark, or other IP rights.</p>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 6 -->
+      <section class="terms-section" id="s6">
+        <span class="section-number">06</span>
+        <h2>Client-Supplied Files</h2>
+        <p>Finical 3D accepts STL, STEP, OBJ, 3MF, and other common 3D file formats. It is the Client's responsibility to supply print-ready files unless CAD preparation has been included in the quote.</p>
+        <ul>
+          <li>Files should be watertight (manifold), correctly scaled, and free of geometry errors. Finical 3D will attempt to identify obvious file issues prior to printing but cannot guarantee detection of all errors.</li>
+          <li>If significant file remediation is required, this will be quoted separately or deducted from the agreed design time.</li>
+          <li>Finical 3D is not liable for print failures or quality issues arising directly from errors in client-supplied files.</li>
+          <li>Submitted files will be held securely and not shared with third parties without the Client's consent. Files may be deleted after 90 days unless the Client requests retention.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 7 -->
+      <section class="terms-section" id="s7">
+        <span class="section-number">07</span>
+        <h2>Materials</h2>
+        <p>Finical 3D uses a range of commercially available filaments and resins. Unless a specific material is agreed in writing, we will select the most suitable material for the application based on the information provided.</p>
+        <ul>
+          <li>Available FDM materials include but are not limited to: PLA, PETG, ABS, ASA, TPU, and engineering-grade variants.</li>
+          <li>Available resin types include standard, ABS-like, flexible, and high-detail resins.</li>
+          <li>Colour matching is approximate. Exact colour reproduction cannot be guaranteed, and finished prints may differ slightly from on-screen representations or reference samples.</li>
+          <li>Material properties (strength, flexibility, heat resistance, UV stability) are indicative. The Client is responsible for verifying suitability for their intended application, particularly for safety-critical or load-bearing uses.</li>
+          <li>Recycled filament, where used, is clearly disclosed. Recycled material may have slightly variable properties compared to virgin filament.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 8 -->
+      <section class="terms-section" id="s8">
+        <span class="section-number">08</span>
+        <h2>Production &amp; Turnaround Times</h2>
+        <p>Estimated turnaround times are provided in good faith but are not guaranteed. Production timelines depend on print complexity, machine availability, queue position, and post-processing requirements.</p>
+        <ul>
+          <li>Standard turnaround is <strong>3–10 business days</strong> from order confirmation and receipt of print-ready files, depending on order complexity and current workload.</li>
+          <li>Rush orders (where offered) will be quoted separately and are subject to availability.</li>
+          <li>Finical 3D will notify the Client of any material delay as soon as practicable.</li>
+          <li>Delays caused by incomplete or incorrect information, delayed file submission, or delayed payment approval are not the responsibility of Finical 3D.</li>
+          <li>Finical 3D shall not be liable for losses caused by delays beyond our reasonable control, including but not limited to equipment failure, power outages, supplier delays, or events of force majeure.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 9 -->
+      <section class="terms-section" id="s9">
+        <span class="section-number">09</span>
+        <h2>Quality &amp; Dimensional Tolerances</h2>
+        <p>Finical 3D takes pride in producing high-quality prints. However, 3D printing is an additive manufacturing process with inherent characteristics that the Client should be aware of:</p>
+        <ul>
+          <li><strong>FDM tolerance:</strong> Typical dimensional tolerance is ±0.2–0.5 mm depending on geometry, material, and print orientation. Tighter tolerances may be achievable by arrangement.</li>
+          <li><strong>Resin tolerance:</strong> Typical dimensional tolerance is ±0.1–0.2 mm.</li>
+          <li>Layer lines, surface texture, and minor print artefacts are inherent to the process and do not constitute defects unless they materially affect the agreed function of the part.</li>
+          <li>Warping, minor colour variation, and slight shrinkage may occur depending on material and geometry. We will take reasonable steps to minimise these effects.</li>
+          <li>Post-processing (sanding, painting, sealing) is available by arrangement and may alter final dimensions.</li>
+          <li>Where a part must meet specific functional tolerances, the Client must communicate these requirements in writing prior to order confirmation.</li>
+        </ul>
+        <div class="highlight-box">
+          <strong>Prototypes &amp; Functional Parts</strong>
+          Finical 3D prints are suitable for prototyping, display, and many functional applications. They are <em>not</em> certified for structural, medical, electrical safety, food contact, or other regulated applications unless specifically agreed in writing and appropriate certifications are obtained.
+        </div>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 10 -->
+      <section class="terms-section" id="s10">
+        <span class="section-number">10</span>
+        <h2>Delivery &amp; Risk</h2>
+        <p>Completed orders can be collected from our Christchurch location by arrangement, or dispatched via courier at the Client's cost and risk.</p>
+        <ul>
+          <li>Risk in goods passes to the Client upon handover to the courier or upon collection.</li>
+          <li>Finical 3D will package goods with reasonable care. We recommend Clients request courier insurance for high-value or fragile items.</li>
+          <li>Delivery timeframes provided by couriers are estimates and are not guaranteed by Finical 3D.</li>
+          <li>Claims for goods damaged in transit must be directed to the courier. Finical 3D will assist with documentation where possible.</li>
+          <li>Uncollected orders held beyond 30 days after notification of completion may incur a storage fee or be forfeited without refund.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 11 -->
+      <section class="terms-section" id="s11">
+        <span class="section-number">11</span>
+        <h2>Returns &amp; Refunds</h2>
+        <p>Due to the custom nature of 3D printing, all orders are made to specification and are generally non-returnable unless the issue is a result of our error.</p>
+        <ul>
+          <li><strong>Defective or incorrect prints:</strong> If a print is materially defective or does not match the agreed specification, please contact us within <strong>7 days of receipt</strong> with photographs and a description of the issue. We will assess the claim and, at our discretion, offer a reprint, partial refund, or credit.</li>
+          <li>We are not liable for issues arising from errors in the Client's design files, incorrect specifications supplied by the Client, or misuse of the finished product.</li>
+          <li>Cosmetic complaints (minor layer lines, colour variation within tolerance) do not qualify for a refund where these characteristics were disclosed or are inherent to the process.</li>
+          <li>Refunds, where approved, will be processed via the original payment method within 10 business days.</li>
+          <li>Nothing in these Terms limits your rights under the New Zealand Consumer Guarantees Act 1993 or Fair Trading Act 1986, where applicable.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 12 -->
+      <section class="terms-section" id="s12">
+        <span class="section-number">12</span>
+        <h2>3D Scanning Services</h2>
+        <p>Our 3D scanning service uses a blue laser scanner to capture precise surface geometry for reverse engineering, archival, quality inspection, and CAD reconstruction.</p>
+        <ul>
+          <li>The Client must supply the physical object to be scanned in good condition and clearly communicate the intended use of the scan data.</li>
+          <li>Scan accuracy is typically within ±0.05–0.1 mm for objects within the recommended scanning volume. Accuracy may vary for highly reflective, transparent, or very dark surfaces — pre-treatment (e.g. scanning spray) may be recommended.</li>
+          <li>Finical 3D will take reasonable care of all items submitted for scanning, but is not liable for pre-existing damage, nor for damage occurring during handling of fragile, worn, or poorly maintained items unless caused by gross negligence.</li>
+          <li>Scan data is delivered in the agreed format (e.g. STL, OBJ, STEP, point cloud). Additional processing or CAD reconstruction is quoted separately.</li>
+          <li>Scan data of client-owned objects belongs to the Client. Finical 3D may retain anonymised scan data for quality benchmarking purposes unless the Client requests otherwise.</li>
+          <li>Scanning of objects the Client does not own or have authority to reproduce is prohibited. The Client accepts full responsibility for IP compliance.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 13 -->
+      <section class="terms-section" id="s13">
+        <span class="section-number">13</span>
+        <h2>Prohibited Uses</h2>
+        <p>Finical 3D will not knowingly produce, and the Client must not request, any items that:</p>
+        <ul>
+          <li>Are designed to function as, or be components of, any weapon, firearm, or device intended to cause injury or death — including but not limited to firearms, firearm components, suppressors, knives intended as weapons, or projectile devices.</li>
+          <li>Infringe the intellectual property rights of any third party, including copyrighted characters, trademarked logos, or patented designs, without documented permission from the rights holder.</li>
+          <li>Constitute counterfeit goods, fraudulent items, or items designed to deceive or defraud.</li>
+          <li>Are intended to circumvent safety systems, tamper with locks, meters, or other regulated infrastructure, or facilitate illegal activity of any kind.</li>
+          <li>Depict child exploitation material, non-consensual intimate imagery, or other illegal content.</li>
+          <li>Are illegal to manufacture, possess, or supply under New Zealand law.</li>
+        </ul>
+        <p>If Finical 3D becomes aware that a completed item was used for a prohibited purpose, we reserve the right to refuse future orders from that Client and to report the matter to relevant authorities.</p>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 14 -->
+      <section class="terms-section" id="s14">
+        <span class="section-number">14</span>
+        <h2>Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law:</p>
+        <ul>
+          <li>Finical 3D's total liability to you for any claim arising from or in connection with our services is limited to the amount paid by you for the specific order giving rise to the claim.</li>
+          <li>Finical 3D is not liable for any indirect, consequential, special, or incidental loss or damage, including loss of profit, loss of business, or damage to reputation, even if advised of the possibility of such loss.</li>
+          <li>Finical 3D is not liable for any loss or damage arising from the Client's use or misuse of printed parts, including use in applications for which the material or design is unsuitable.</li>
+          <li>Our liability is not excluded or limited in relation to death or personal injury caused by our negligence, or for fraudulent misrepresentation.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 15 -->
+      <section class="terms-section" id="s15">
+        <span class="section-number">15</span>
+        <h2>Consumer Guarantees Act &amp; Fair Trading Act</h2>
+        <p>Where you are a <strong>consumer</strong> as defined by the New Zealand Consumer Guarantees Act 1993 (CGA), you have statutory rights that cannot be excluded by these Terms, including guarantees that services will be carried out with reasonable care and skill and that goods will be of acceptable quality.</p>
+        <ul>
+          <li>Where the CGA applies, nothing in these Terms overrides your statutory rights.</li>
+          <li>If you are acquiring our services for the purpose of a business, you agree that the CGA does not apply to that supply, and our liability is governed by these Terms.</li>
+          <li>Finical 3D complies with the Fair Trading Act 1986 and does not engage in misleading or deceptive conduct.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 16 -->
+      <section class="terms-section" id="s16">
+        <span class="section-number">16</span>
+        <h2>Privacy</h2>
+        <p>Finical 3D collects and holds personal information (name, contact details, order history) for the purpose of providing services, invoicing, and communicating with you.</p>
+        <ul>
+          <li>We comply with the New Zealand Privacy Act 2020.</li>
+          <li>Your information will not be sold or disclosed to third parties except as required to fulfil your order (e.g. courier services) or as required by law.</li>
+          <li>You have the right to request access to and correction of personal information held about you. Requests can be directed to <a href="mailto:matt@finical3d.co.nz">matt@finical3d.co.nz</a>.</li>
+          <li>Design files submitted by Clients are treated as confidential and will not be shared without consent. See Section 6 for file retention details.</li>
+        </ul>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 17 -->
+      <section class="terms-section" id="s17">
+        <span class="section-number">17</span>
+        <h2>Governing Law &amp; Disputes</h2>
+        <p>These Terms are governed by and construed in accordance with the laws of <strong>New Zealand</strong>. Any dispute arising under these Terms will be subject to the exclusive jurisdiction of the New Zealand courts.</p>
+        <p>Before initiating formal proceedings, both parties agree to attempt to resolve any dispute in good faith through direct communication. If a resolution cannot be reached, either party may refer the matter to the Disputes Tribunal (for claims up to $30,000) or such other dispute resolution body as may be appropriate.</p>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 18 -->
+      <section class="terms-section" id="s18">
+        <span class="section-number">18</span>
+        <h2>Changes to These Terms</h2>
+        <p>Finical 3D reserves the right to update or amend these Terms at any time. The current version will always be published on our website with an updated effective date. Continued use of our services following a change constitutes acceptance of the revised Terms.</p>
+        <p>For ongoing or multi-stage projects, the Terms in effect at the time of the original order confirmation will apply unless otherwise agreed.</p>
+      </section>
+      <hr class="terms-divider">
+
+      <!-- 19 -->
+      <section class="terms-section" id="s19">
+        <span class="section-number">19</span>
+        <h2>Contact Us</h2>
+        <p>If you have any questions about these Terms, or wish to discuss an order, please get in touch:</p>
+        <ul>
+          <li><strong>Business:</strong> Finical 3D</li>
+          <li><strong>Location:</strong> Christchurch, Canterbury, New Zealand</li>
+          <li><strong>Email:</strong> <a href="mailto:matt@finical3d.co.nz">matt@finical3d.co.nz</a></li>
+          <li><strong>Phone:</strong> <a href="tel:+64211752398">+64 21 175 2398</a></li>
+        </ul>
+      </section>
+
+      <!-- Contact strip -->
+      <div class="terms-contact-strip">
+        <div>
+          <h3>Questions about these terms?</h3>
+          <p>We're happy to clarify anything before you place an order.</p>
+        </div>
+        <a href="/contact" class="cta-button primary">Get in Touch</a>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>Finical 3D</h3>
+        <p>Reimagining 3D Design &amp; Printing for the Future</p>
+      </div>
+      <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="/#contact">Contact Us</a></li>
+          <li><a href="/#contact">Shipping Info</a></li>
+          <li><a href="/terms">Terms</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/about">Sustainability</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Finical 3D. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script is:inline src="/finical3d-scripts.js"></script>
+
+  <!-- TOC active state on scroll -->
+  <script>
+    const sections = document.querySelectorAll('.terms-section');
+    const tocLinks = document.querySelectorAll('#tocList a');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          tocLinks.forEach(a => a.classList.remove('active'));
+          const active = document.querySelector(`#tocList a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+
+</body>
+</html>
