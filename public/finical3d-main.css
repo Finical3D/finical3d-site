@@ -601,13 +601,17 @@ nav.scrolled {
 .hero-title .line:nth-child(3) span { animation-delay: 0.4s; }
 
 .hero-title .accent {
-	background: linear-gradient(90deg, #33ff8f, #66ffff);
+	background: linear-gradient(135deg, #fff, var(--accent));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	padding-right: 20px;
 	padding-bottom: 5px;
 	text-align:center;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: auto;
+	display: block; /* Changes from inline to clear spacing blocks */
 	
 }
 
