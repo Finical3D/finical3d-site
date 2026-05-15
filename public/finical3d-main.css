@@ -104,7 +104,7 @@ nav.scrolled {
 
 .logo-text {
 	position: relative;
-	font-size: 40px;
+	font-size: 35px;
 	font-weight: 900;
 	margin-bottom: 3px;
 	letter-spacing: -2px;
@@ -607,6 +607,7 @@ nav.scrolled {
 	background-clip: text;
 	padding-right: 20px;
 	padding-bottom: 5px;
+	text-align:center;
 }
 
 @keyframes slideUp {
@@ -1867,6 +1868,21 @@ footer {
 		font-size: clamp(36px, 10vw, 58px);
 		word-break: break-word;
 		margin-bottom: 18px;
+		
+	}
+
+	.hero-title .accent {
+
+		background: linear-gradient(90deg, #33ff8f, #66ffff);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
+		text-transform: uppercase;
+		padding-left: 4.5%;
+		font-size: clamp(36px, 10vw, 58px);
+		word-break: break-word;
+		text-align:center;
+		
 	}
 
 	.hero-description {
