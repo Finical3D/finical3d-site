@@ -108,70 +108,70 @@
         </div>
     </div>
 
-<script is:inline>
-    document.querySelectorAll('.service-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            const serviceInput = document.getElementById('serviceType');
-            if (serviceInput) serviceInput.value = btn.dataset.value ?? '';
-        });
-    });
-
-    const qtyInput = document.getElementById('quantity');
-
-    document.getElementById('qtyUp')?.addEventListener('click', () => {
-        if (qtyInput) qtyInput.value = String(parseInt(qtyInput.value || '0') + 1);
-    });
-
-    document.getElementById('qtyDown')?.addEventListener('click', () => {
-        if (qtyInput && parseInt(qtyInput.value) > 1) qtyInput.value = String(parseInt(qtyInput.value) - 1);
-    });
-
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const submitBtn = contactForm.querySelector('.form-submit');
-            const originalText = submitBtn.textContent;
-            submitBtn.textContent = 'Sending...';
-            submitBtn.style.opacity = '0.7';
-            submitBtn.disabled = true;
-
-            const formData = new FormData(contactForm);
-
-            fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
-            })
-            .then(res => res.json())
-            .then(data => {
-                if (data.success) {
-                    submitBtn.textContent = 'Message Sent! ✓';
-                    submitBtn.style.background = '#4CAF50';
-                    contactForm.reset();
-                    document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
-                } else {
-                    submitBtn.textContent = 'Something went wrong';
-                    submitBtn.style.background = '#e53e3e';
-                }
-                setTimeout(() => {
-                    submitBtn.textContent = originalText;
-                    submitBtn.style.background = '';
-                    submitBtn.style.opacity = '';
-                    submitBtn.disabled = false;
-                }, 3000);
-            })
-            .catch(() => {
-                submitBtn.textContent = 'Error — try again';
-                submitBtn.style.background = '#e53e3e';
-                submitBtn.disabled = false;
+    <script is:inline>
+        document.querySelectorAll('.service-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const serviceInput = document.getElementById('serviceType');
+                if (serviceInput) serviceInput.value = btn.dataset.value ?? '';
             });
         });
-    }
-</script>
+
+        const qtyInput = document.getElementById('quantity');
+
+        document.getElementById('qtyUp')?.addEventListener('click', () => {
+            if (qtyInput) qtyInput.value = String(parseInt(qtyInput.value || '0') + 1);
+        });
+
+        document.getElementById('qtyDown')?.addEventListener('click', () => {
+            if (qtyInput && parseInt(qtyInput.value) > 1) qtyInput.value = String(parseInt(qtyInput.value) - 1);
+        });
+
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const submitBtn = contactForm.querySelector('.form-submit');
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.style.opacity = '0.7';
+                submitBtn.disabled = true;
+
+                const formData = new FormData(contactForm);
+
+                fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        submitBtn.textContent = 'Message Sent! ✓';
+                        submitBtn.style.background = '#4CAF50';
+                        contactForm.reset();
+                        document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
+                    } else {
+                        submitBtn.textContent = 'Something went wrong';
+                        submitBtn.style.background = '#e53e3e';
+                    }
+                    setTimeout(() => {
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.background = '';
+                        submitBtn.style.opacity = '';
+                        submitBtn.disabled = false;
+                    }, 3000);
+                })
+                .catch(() => {
+                    submitBtn.textContent = 'Error — try again';
+                    submitBtn.style.background = '#e53e3e';
+                    submitBtn.disabled = false;
+                });
+            });
+        }
+    </script>
 </section>
 
 <style>
