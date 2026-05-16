@@ -76,28 +76,6 @@ import FeaturedImage from '../components/FeaturedImage.astro';
 </Layout>
 
 <style>
-    .about-hero {
-        min-height: 50vh;
-        position: relative;
-        overflow: hidden;
-        background: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .about-hero-content {
-        position: relative;
-        z-index: 2;
-        padding: 140px 50px 0px;
-        max-width: 900px;
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        overflow: visible;
-    }
-
     :global(.about-hero .hero-title) {
         font-size: clamp(28px, 6vw, 90px);
         text-align: center;
@@ -132,10 +110,6 @@ import FeaturedImage from '../components/FeaturedImage.astro';
 
         .feature-highlights {
             grid-template-columns: 1fr;
-        }
-
-        .about-hero-content {
-            padding: 120px 20px 60px;
         }
     }
 

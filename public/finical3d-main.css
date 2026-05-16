@@ -223,6 +223,36 @@ nav.scrolled {
     margin: 40px 0;
 }
 
+/* ── About Hero ── */
+.about-hero {
+    min-height: auto;
+    position: relative;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.about-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 140px 50px 40px;
+    max-width: 800px;
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        padding-bottom: 0;
+    }
+
+    .about-hero-content {
+        padding: 100px 20px 0px;
+    }
+}
+
+
 /* Individual layout row */
 .grid-item {
     display: flex;
@@ -1860,7 +1890,7 @@ footer {
 	.hero-bg {
 	position: absolute;
 	width: 100%;
-	height: 80%;
+	height: 100%;
 	top: 0;
 	left: 0;
 	overflow: hidden;
