@@ -1246,7 +1246,7 @@ nav.scrolled {
 	display: inline-block;
 	padding: 18px 50px;
 	background: var(--accent);
-	color: white;
+	color: rgb(0, 0, 0);
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 2px;
@@ -1855,11 +1855,20 @@ footer {
 		/* Ensure content clears the fixed nav on all phone heights */
 		min-height: auto; /* dynamic viewport height — avoids iOS address bar */
 	}
+	.hero-bg {
+	position: absolute;
+	width: 100%;
+	height: 80%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 1;
+}
 
 	.hero-container {
 		grid-template-columns: 1fr;
-		padding: 0 20px;
-		padding-bottom: 60px;
+		padding: 0 0px;
+		padding-bottom: 0px;
 		text-align: center;
 		align-items: start;
 	}
@@ -1954,7 +1963,7 @@ footer {
 	.collections,
 	.featured,
 	.contact {
-		padding: 70px 16px 50px;
+		padding: 40px 16px 0px;
 	}
 
 	.section-title {
@@ -2014,9 +2023,9 @@ footer {
 	}
 
 	.featured-content {
-		padding: 0;
 		text-align: center;
 		margin-bottom: 30px;
+		padding-top: 0;
 	}
 
 	.featured-content h2 {
@@ -2126,6 +2135,23 @@ footer {
 	}
 
 	/* ── Contact form ── */
+	.contact {
+		padding: 80px 50px 0px;
+		background: var(--bg-section);
+	}
+
+	.contact-container {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding-top:40px;
+	}
+
+	.contact-header {
+		text-align: center;
+		margin-bottom: 60px;
+		padding-top:0 !important;
+	}
+
 	.contact-form-wrapper {
 		padding: 24px 18px;
 	}

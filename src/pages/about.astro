@@ -44,7 +44,7 @@ import FeaturedImage from '../components/FeaturedImage.astro';
 
 <style>
     .about-hero {
-        min-height: 50vh;
+        min-height: auto;
         position: relative;
         overflow: hidden;
         background: #000;
@@ -74,7 +74,12 @@ import FeaturedImage from '../components/FeaturedImage.astro';
         }
 
         .about-hero-content {
-            padding: 120px 20px 60px;
+            padding: 120px 20px 0px;
+        }
+
+        .featured-highlights {
+            display: hidden !important;
+            margin-top: 0;
         }
     }
 </style>
