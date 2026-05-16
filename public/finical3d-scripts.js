@@ -157,50 +157,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Contact form handling
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const submitBtn = contactForm.querySelector('.form-submit');
-        const originalText = submitBtn.textContent;
-        submitBtn.textContent = 'Sending...';
-        submitBtn.style.opacity = '0.7';
-        submitBtn.disabled = true;
-
-        const formData = new FormData(contactForm);
-
-        fetch('https://formspree.io/f/YOUR_FORM_ID', {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.ok) {
-                submitBtn.textContent = 'Message Sent! ✓';
-                submitBtn.style.background = '#4CAF50';
-                contactForm.reset();
-            } else {
-                submitBtn.textContent = 'Something went wrong';
-                submitBtn.style.background = '#e53e3e';
-            }
-            setTimeout(() => {
-                submitBtn.textContent = originalText;
-                submitBtn.style.background = '';
-                submitBtn.style.opacity = '';
-                submitBtn.disabled = false;
-            }, 3000);
-        })
-        .catch(() => {
-            submitBtn.textContent = 'Error — try again';
-            submitBtn.style.background = '#e53e3e';
-            submitBtn.disabled = false;
-        });
-    });
-}
-
 // Form input animations
 const formInputs = document.querySelectorAll('.form-group input, .form-group textarea');
 formInputs.forEach(input => {
