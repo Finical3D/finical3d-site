@@ -2494,7 +2494,7 @@ footer {
 @media (max-width: 768px) {
 
     #navbar img[alt="F3D"] {
-        width: 60px;
+        width: 40px;
         margin-right: 8px;
     }
 }
@@ -2508,9 +2508,9 @@ footer {
 @media (max-width: 768px) {
 
     #navbar img[alt="Finical 3D"] {
-        height: 60px;
+        height: 30px;
 		width: auto;
         margin-right: 8px;
-		margin-left: 22px;
+		margin-left: 5px;
     }
 }
