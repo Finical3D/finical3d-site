@@ -1,45 +1,35 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
 <nav id="navbar">
-        <div class="nav-container">
-            <a href="/" class="logo-link">
-                <!--<svg class="logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#fff;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#33b4ff;stop-opacity:1" />
-                        </linearGradient>
-                    </defs>
-                    <polygon points="50,10 20,50 50,90 80,50" fill="none" stroke="url(#logoGrad)" stroke-width="3"/>
-                    <circle cx="50" cy="50" r="5" fill="url(#logoGrad)"/>
-                </svg>-->
-                <!--<img src="/F3D.png" alt="F3D">-->
-                <div class="logo-shadow-wrap">
-                    <img src="/finical3d_logo-Long.png" alt="Finical 3D">
-                    <!--<span class="logo-text" data-text="FINICAL 3D">FINICAL 3D</span>-->
-                </div>
-            </a>
-            <ul class="nav-links">
-                <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="/about" class="nav-link">About</a></li>
-                <li><a href="/tools" class="nav-link">Our Tech</a></li>
-                <li><a href="/sustainability" class="nav-link">Sustainability</a></li> 
-                <li><a href="/contact" class="nav-link">Contact</a></li>
-                <!-- <li><a href="#contact" class="nav-cta">Get In Touch</a></li> -->
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <div class="nav-container">
+        <a href="/" class="logo-link">
+            <div class="logo-shadow-wrap">
+                <img src="/finical3d_logo-Long.png" alt="Finical 3D">
             </div>
-        </div>
-    </nav>
-    
-    <div class="mobile-nav" id="mobileNav">
-        <ul class="mobile-nav-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/tools">Our Tech</a></li>
-            <li><a href="/sustainability">Sustainability</a></li>
-            <!--<li><a href="/showcases">Showcases</a></li> -->
-            <li><a href="/contact">Contact</a></li>
+        </a>
+        <ul class="nav-links">
+            <li><a href="/" class:list={['nav-link', { active: currentPath === '/' }]}>Home</a></li>
+            <li><a href="/about" class:list={['nav-link', { active: currentPath === '/about' }]}>About</a></li>
+            <li><a href="/tools" class:list={['nav-link', { active: currentPath === '/tools' }]}>Our Tech</a></li>
+            <li><a href="/sustainability" class:list={['nav-link', { active: currentPath === '/sustainability' }]}>Sustainability</a></li>
+            <li><a href="/contact" class:list={['nav-link', { active: currentPath === '/contact' }]}>Contact</a></li>
         </ul>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </div>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+    <ul class="mobile-nav-links">
+        <li><a href="/" class:list={[{ active: currentPath === '/' }]}>Home</a></li>
+        <li><a href="/about" class:list={[{ active: currentPath === '/about' }]}>About</a></li>
+        <li><a href="/tools" class:list={[{ active: currentPath === '/tools' }]}>Our Tech</a></li>
+        <li><a href="/sustainability" class:list={[{ active: currentPath === '/sustainability' }]}>Sustainability</a></li>
+        <li><a href="/contact" class:list={[{ active: currentPath === '/contact' }]}>Contact</a></li>
+    </ul>
+</div>

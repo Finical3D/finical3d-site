@@ -92,32 +92,6 @@ https://templatemo.com/tm-599-noir-fashion
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
-            // Scroll spy for active navigation
-            sections.forEach(section => {
-                const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - navHeight - 10;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + sectionId) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-            
-            // Special case for home when at the very top
-            if (scrollY < 100) {
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === '#home') {
-                        link.classList.add('active');
-                    }
-                });
-            }
         }
 
         window.addEventListener('scroll', updateActiveNav);
