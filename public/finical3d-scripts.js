@@ -169,38 +169,34 @@ if (contactForm) {
         submitBtn.style.opacity = '0.7';
         submitBtn.disabled = true;
 
-        grecaptcha.ready(() => {
-            grecaptcha.execute('6LfwAO0sAAAAAH16-kgTh71RlAa4y_e5yblHdCAm', { action: 'submit' }).then((token) => {
-                const formData = new FormData(contactForm);
-                formData.append('recaptcha_token', token);
+        const formData = new FormData(contactForm);
 
-                fetch('/api/contact', {
-                    method: 'POST',
-                    body: formData
-                })
-                .then(res => res.json())
-                .then(data => {
-                    if (data.success) {
-                        submitBtn.textContent = 'Message Sent! ✓';
-                        submitBtn.style.background = '#4CAF50';
-                        contactForm.reset();
-                    } else {
-                        submitBtn.textContent = 'Something went wrong';
-                        submitBtn.style.background = '#e53e3e';
-                    }
-                    setTimeout(() => {
-                        submitBtn.textContent = originalText;
-                        submitBtn.style.background = '';
-                        submitBtn.style.opacity = '';
-                        submitBtn.disabled = false;
-                    }, 3000);
-                })
-                .catch(() => {
-                    submitBtn.textContent = 'Error — try again';
-                    submitBtn.style.background = '#e53e3e';
-                    submitBtn.disabled = false;
-                });
-            });
+        fetch('https://formspree.io/f/YOUR_FORM_ID', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(res => res.json())
+        .then(data => {
+            if (data.ok) {
+                submitBtn.textContent = 'Message Sent! ✓';
+                submitBtn.style.background = '#4CAF50';
+                contactForm.reset();
+            } else {
+                submitBtn.textContent = 'Something went wrong';
+                submitBtn.style.background = '#e53e3e';
+            }
+            setTimeout(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.style.background = '';
+                submitBtn.style.opacity = '';
+                submitBtn.disabled = false;
+            }, 3000);
+        })
+        .catch(() => {
+            submitBtn.textContent = 'Error — try again';
+            submitBtn.style.background = '#e53e3e';
+            submitBtn.disabled = false;
         });
     });
 }
