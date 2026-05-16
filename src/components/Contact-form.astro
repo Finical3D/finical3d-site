@@ -149,7 +149,7 @@
                 .then(res => res.json())
                 .then(data => {
                     console.log('Web3Forms response:', JSON.stringify(data));
-                    if (data.ok) {
+                    if (data.success) {
                         submitBtn.textContent = 'Message Sent! ✓';
                         submitBtn.style.background = '#4CAF50';
                         contactForm.reset();
