@@ -314,6 +314,7 @@ nav.scrolled {
 
 	.hero-image-wrapper {
 		max-width: 400px;
+		padding-top: 0;
 	}
 
 	.tag {
@@ -746,6 +747,7 @@ nav.scrolled {
 	width: 100%;
 	max-width: 500px;
 	height: 600px;
+	padding-top: 10px;
 }
 
 .hero-carousel {
@@ -1071,7 +1073,7 @@ nav.scrolled {
 /* ─── Featured Section ─────────────────────────────────────────────────────── */
 
 .featured {
-	padding: 100px 50px 40px;
+	padding: 40px 50px 40px;
 	background: var(--bg-section);
 	position: relative;
 	overflow: hidden;
@@ -2058,8 +2060,7 @@ footer {
 	}
 
 	.highlight-item {
-		flex: 0 0 72vw !important;
-		min-width: 72vw !important;
+		min-width: 50vw !important;
 		scroll-snap-align: start;
 		padding: 20px;
 	}
