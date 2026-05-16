@@ -1,7 +1,3 @@
-<input type="hidden" name="access_key" value="eb2ee476-8879-4dbc-944a-8d786fb4a84f">
-<input type="hidden" name="subject" value="New Finical 3D Enquiry">
-<input type="hidden" name="from_name" value="Finical 3D Website">
-
 <section class="contact" id="contact">
     <div class="contact-container">
         <div class="contact-header" style="padding-top: 60px;">
@@ -12,6 +8,11 @@
         <div class="contact-content">
             <div class="contact-form-wrapper">
                 <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    
+                    <input type="hidden" name="access_key" value="eb2ee476-8879-4dbc-944a-8d786fb4a84f">
+                    <input type="hidden" name="subject" value="New Finical 3D Enquiry">
+                    <input type="hidden" name="from_name" value="Finical 3D Website">
+
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
@@ -108,7 +109,6 @@
     </div>
 
     <script>
-        // Service type buttons
         document.querySelectorAll('.service-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 document.querySelectorAll('.service-btn').forEach(b => b.classList.remove('active'));
@@ -118,7 +118,6 @@
             });
         });
 
-        // Quantity buttons
         const qtyInput = document.getElementById('quantity') as HTMLInputElement;
 
         document.getElementById('qtyUp')?.addEventListener('click', () => {
@@ -129,7 +128,6 @@
             if (qtyInput && parseInt(qtyInput.value) > 1) qtyInput.value = String(parseInt(qtyInput.value) - 1);
         });
 
-        // Form submit via fetch (keeps page, shows feedback)
         const contactForm = document.getElementById('contactForm') as HTMLFormElement;
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
@@ -150,6 +148,7 @@
                 })
                 .then(res => res.json())
                 .then(data => {
+                    console.log('Web3Forms response:', JSON.stringify(data));
                     if (data.ok) {
                         submitBtn.textContent = 'Message Sent! ✓';
                         submitBtn.style.background = '#4CAF50';
