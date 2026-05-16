@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg width="100%" height="100%" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-    <g transform="matrix(1.103277,0,0,1.116025,-2.506098,-2.623257)">
+<svg width="100%" height="100%" viewBox="0 0 128 128" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g transform="matrix(4.315098,0,0,4.364955,-8.380368,-9.417813)">
         <path d="M31.276,10.443L31.276,23.288C31.276,26.832 28.365,29.71 24.78,29.71L8.768,29.71C5.182,29.71 2.272,26.832 2.272,23.288L2.272,10.443C2.272,6.899 5.182,4.021 8.768,4.021L24.78,4.021C28.365,4.021 31.276,6.899 31.276,10.443Z"/>
     </g>
-    <g transform="matrix(1.937474,0,0,2.336719,-15.151661,5.001637)">
+    <g transform="matrix(7.577776,0,0,9.139291,-57.83923,20.404391)">
         <text x="8.735px" y="9.17px" style="font-family:'CNRGNNormalRegular', 'CNRGN Normal';font-size:11.031px;fill:rgb(149,18,41);">F</text>
         <g transform="matrix(11.031429,0,0,11.031429,23.847931,9.170156)">
         </g>
         <text x="13.776px" y="9.17px" style="font-family:'CNRGNNormalRegular', 'CNRGN Normal';font-size:11.031px;fill:rgb(69,80,232);">3D</text>
     </g>
-    <g transform="matrix(1.937474,0,0,2.336719,-15.991691,3.962562)">
+    <g transform="matrix(7.577776,0,0,9.139291,-61.124724,16.340397)">
         <text x="8.735px" y="9.17px" style="font-family:'CNRGNNormalRegular', 'CNRGN Normal';font-size:11.031px;fill:rgb(199,225,36);">F</text>
         <g transform="matrix(11.031429,0,0,11.031429,23.847931,9.170156)">
         </g>

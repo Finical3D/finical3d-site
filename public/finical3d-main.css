@@ -1560,7 +1560,8 @@ nav.scrolled {
 }
 
 .info-item {
-	margin-bottom: 50px;
+	margin-top: 30px;
+	margin-bottom: 30px;
 	display: flex;
 	align-items: start;
 	gap: 20px;
@@ -2421,4 +2422,63 @@ footer {
   .terms-hero {
     padding: 110px 16px 40px;
   }
+}
+
+/* ── About / Sustainability Hero ── */
+.sustainability-hero .hero-title {
+    font-size: clamp(28px, 6vw, 90px);
+    overflow: visible;
+    word-break: normal;
+	text-align:center;
+    white-space: normal;
+	width:100%;
+}
+
+.sustainability-hero .hero-title .line {
+    overflow: visible;
+	display:block;
+	text-align:center;
+}
+
+.sustainability-hero .hero-title .line span {
+    text-align: center;
+    display: block !important;
+}
+
+.sustainability-hero-content {
+    overflow: visible;
+    width: 100%;
+    max-width: 900px;
+    padding: 140px 40px 80px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .sustainability-hero .hero-title {
+        font-size: clamp(26px, 8vw, 60px);
+    }
+
+    .sustainability-hero-content {
+        padding: 110px 20px 60px;
+    }
+}
+
+@media (max-width: 390px) {
+    .sustainability-hero .hero-title {
+        font-size: clamp(22px, 7.5vw, 40px);
+    }
+}
+
+/* ── Contact form height fix ── */
+.contact-content {
+    align-items: start;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 30px;
+	padding-bottom: 30px;
 }

@@ -1,6 +1,6 @@
 <section class="contact" id="contact">
         <div class="contact-container">
-            <div class="contact-header">
+            <div class="contact-header" style="padding-top: 60px;">
                 <h2 class="section-title">Requests and Queries</h2>
                 <p class="section-subtitle">Let us know how we can assist you</p>
             </div>
@@ -74,3 +74,29 @@
             </div>-->
         </div>
     </section>
+
+<style>
+    :global(.contact) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .contact-header {
+        padding-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    :global(.contact-content) {
+        align-items: stretch;
+    }
+
+    :global(.contact-info) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    :global(.info-item) {
+        margin-bottom: 0;
+    }
+</style>
