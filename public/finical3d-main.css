@@ -789,6 +789,20 @@ nav.scrolled {
 	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 768px) {
+    .hero-image-wrapper {
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+        max-height: 60vw;
+    }
+
+    .hero-carousel {
+        height: 60vw;
+        max-height: 300px;
+    }
+}
+
 .carousel-slide {
 	position: absolute;
 	width: 100%;
