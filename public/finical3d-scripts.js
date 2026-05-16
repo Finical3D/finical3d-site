@@ -257,3 +257,37 @@ https://templatemo.com/tm-599-noir-fashion
         document.querySelectorAll('.featured-container, .contact-content').forEach(el => {
             observer.observe(el);
         });
+
+            // Touch swipe handling
+        let touchStartX = 0;
+        let touchStartTime = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.touches[0].clientX;
+            touchStartTime = Date.now();
+            stopSlideShow();
+        }, { passive: true });
+
+        carousel.addEventListener('touchend', (e) => {
+        const touchEndX = e.changedTouches[0].clientX;
+        const elapsed = Date.now() - touchStartTime;
+        const distance = touchStartX - touchEndX;
+        const velocity = Math.abs(distance) / elapsed;
+
+        // Require deliberate swipe: >50px AND slow enough (not a flick)
+        const minDistance = 50;
+        const maxVelocity = 1.2; // px/ms — filters out fast accidental flicks
+
+        if (Math.abs(distance) > minDistance && velocity < maxVelocity) {
+            if (distance > 0) {
+                // Swiped left — next slide
+                currentSlide = (currentSlide + 1) % slides.length;
+            } else {
+                // Swiped right — previous slide
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            }
+            showSlide(currentSlide);
+        }
+
+        startSlideShow();
+        }, { passive: true });

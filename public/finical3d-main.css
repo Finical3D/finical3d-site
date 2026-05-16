@@ -38,7 +38,7 @@ section {
 }
 
 body {
-	font-family: 'Helvetica', sans-serif;
+	font-family: 'Roboto Condensed', sans-serif;
 	background: var(--bg-dark);
 	color: var(--text-light);
 	/* Prevent horizontal overflow on any phone */
@@ -592,9 +592,9 @@ nav.scrolled {
 }
 
 .hero-title .line span {
-	display: inline-block;
-	animation: slideUp 1s ease backwards;
-	animation-fill-mode: forwards;
+    display: inline-block;
+    animation: slideDown 1s ease backwards;
+    animation-fill-mode: backwards;
 }
 
 .hero-title .line:nth-child(1) span { animation-delay: 0.2s; }
@@ -691,7 +691,7 @@ nav.scrolled {
 
 .cta-button.primary {
 	background: var(--accent);
-	color: white;
+	color: rgb(0, 0, 0);
 	border-radius: 4px;
 }
 
@@ -795,7 +795,7 @@ nav.scrolled {
 
 .indicator {
 	width: 40px;
-	height: 3px;
+	height: 12px;
 	background: rgba(255, 255, 255, 0.3);
 	cursor: pointer;
 	transition: all 0.3s ease;
