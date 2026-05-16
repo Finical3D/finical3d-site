@@ -1,21 +1,10 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Contactform from '../components/Contact-form.astro';
 import Nav from '../components/Nav.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finical 3D - Contact</title>
-    <link rel="stylesheet" href="/finical3d-main.css">
-</head>
-<body>
-    <Nav />
+<Layout title="Contact Us - Finical 3D">
     <Contactform />
-    <Footer />
-    <script is:inline src="/finical3d-scripts.js"></script>
-</body>
-</html>
+</Layout>

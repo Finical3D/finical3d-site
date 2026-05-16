@@ -1,25 +1,14 @@
 ---
-const title = "About Finical 3D";
-import Footer from '../components/Footer.astro';
-import Nav from '../components/Nav.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <link rel="stylesheet" href="/finical3d-main.css">
-</head>
-<body>
-    <Nav />
+<Layout title="Our Tools - Finical 3D">
 
     <section class="about-hero">
         <div class="hero-bg"></div>
         <div class="about-hero-content">
             <h1 class="hero-title">
-                <span class="line"><span><span></span>The Tools<br>of</span></span>
+                <span class="line"><span>The Tools of</span></span>
                 <span class="line"><span class="accent">Finical 3D</span></span>
             </h1>
             <p class="hero-description">
@@ -29,100 +18,86 @@ import Nav from '../components/Nav.astro';
     </section>
 
     <section class="featured">
-<div class="featured-container">
+        <div class="featured-container">
 
-    <!-- This intro block now spans full-width across the layout container -->
-    <div class="intro-block" style="text-align: center; margin-bottom: 60px;">
-        <span class="label" style="padding: 10px 20px; font-size: 30px; color: var(--accent); border-radius: 25px;">Our Tools</span><br>
-        <h2 style="font-size:30px;"><br>High-Quality Equipment</h2>
-        <p style="font-size: 22px;"><br>We provide state-of-the-art 3D printers, scanners, and CAD software to ensure precision and quality in every project.
-        Our tools are designed to meet the highest standards of performance and reliability, enabling us to deliver exceptional results for our clients.</p>
-        
-        <h2 style="font-size:30px;"><br>Our Capabilities</h2>
-        <p style="font-size: 22px;"><br>With our advanced equipment, we can handle a wide range of projects, from simple prototypes to complex end-use parts. Our team is skilled in utilizing these tools to their fullest potential, ensuring that each project meets the highest standards of quality and efficiency.</p>
-    </div>
+            <div class="intro-block">
+                <span class="label">Our Tools</span>
+                <h2>High-Quality Equipment</h2>
+                <p>We provide state-of-the-art 3D printers, scanners, and CAD software to ensure precision and quality in every project. Our tools are designed to meet the highest standards of performance and reliability, enabling us to deliver exceptional results for our clients.</p>
+                <h2>Our Capabilities</h2>
+                <p>With our advanced equipment, we can handle a wide range of projects, from simple prototypes to complex end-use parts. Our team is skilled in utilizing these tools to their fullest potential, ensuring that each project meets the highest standards of quality and efficiency.</p>
+            </div>
 
-            <!-- The Side-by-Side Grid Items -->
             <div class="tools-grid">
-                
+
                 <div class="grid-item">
                     <div class="grid-text">
                         <h2>Elegoo Centauri Carbon</h2>
-                        <p class="tagline"><br>Our hard working buddy.</p>
-                        <p style="font-size: 22px;"><br>Our FDM printers offer exceptional detail and surface finish for a wide range of applications. This printer is capable of printing in a wide range of filament types. With a fully enclosed build volume, engineering grade filament can be used for robust and durable prints.</p>
-                        
+                        <p class="tagline">Our hard working buddy.</p>
+                        <p>Our FDM printers offer exceptional detail and surface finish for a wide range of applications. This printer is capable of printing in a wide range of filament types. With a fully enclosed build volume, engineering grade filament can be used for robust and durable prints.</p>
                     </div>
-                    <img src="/images/centauri.png" alt="Centauri" class="grid-img">
+                    <img src="/images/centauri.jpg" alt="Centauri" class="grid-img">
                 </div>
 
                 <div class="grid-item">
                     <div class="grid-text">
                         <h2>Elegoo Mars 5 Ultra</h2>
-                        <p class="tagline"><br>Our artistic companion.</p>
-                        <p style="font-size: 22px;"><br>Meet the Elegoo Mars 5 Ultra, our latest resin printer designed for high-resolution printing and exceptional detail. With a high resolution of 2560 x 1440 pixels, it delivers stunning results for intricate models.</p>
-                        
+                        <p class="tagline">Our artistic companion.</p>
+                        <p>Meet the Elegoo Mars 5 Ultra, our latest resin printer designed for high-resolution printing and exceptional detail. With a high resolution of 2560 x 1440 pixels, it delivers stunning results for intricate models.</p>
                     </div>
-                    <img src="/images/mars5ultra.png" alt="Mars 5 Ultra" class="grid-img">
+                    <img src="/images/mars5ultra.jpg" alt="Mars 5 Ultra" class="grid-img">
                 </div>
 
                 <div class="grid-item">
                     <div class="grid-text">
                         <h2>Elegoo Mercury 3.0 Plus</h2>
-                        <p class="tagline"><br>Our washing warden.</p>
-                        <p style="font-size: 22px;"><br>The cleaning station required to do the dirty work and provide your prints with a flawless finish. With advanced uv curing technology, it ensures consistent and high-quality results.</p>
-                        
+                        <p class="tagline">Our washing warden.</p>
+                        <p>The cleaning station required to do the dirty work and provide your prints with a flawless finish. With advanced UV curing technology, it ensures consistent and high-quality results.</p>
                     </div>
-                    <img src="/images/elegoomercury.png" alt="Mercury" class="grid-img">
+                    <img src="/images/elegoomercury.jpg" alt="Mercury" class="grid-img">
                 </div>
 
                 <div class="grid-item">
                     <div class="grid-text">
                         <h2>Creality Otter</h2>
-                        <p class="tagline"><br>Our precision partner.</p>
-                        <p style="font-size: 22px;"><br>The Otter is a reliable scanner designed for high-quality 3D scanning and modeling. With up to 0.02mm resolution, it captures fine details with exceptional accuracy.</p>
-                        
+                        <p class="tagline">Our precision partner.</p>
+                        <p>The Otter is a reliable scanner designed for high-quality 3D scanning and modeling. With up to 0.02mm resolution, it captures fine details with exceptional accuracy.</p>
                     </div>
-                    <img src="/images/crealityotter.png" alt="Otter" class="grid-img">
+                    <img src="/images/crealityotter.jpg" alt="Otter" class="grid-img">
                 </div>
 
                 <div class="grid-item">
                     <div class="grid-text">
                         <h2>Powered by Fusion</h2>
-                        <p class="tagline"><br>Our design powerhouse.</p>
-                        <p style="font-size: 22px;"><br>Fusion 360® is a powerful cloud-based CAD/CAM software that enables seamless design and manufacturing workflows. With its intuitive interface and robust feature set, it empowers users to create, simulate, and manufacture innovative products with ease.</p>
-                        
+                        <p class="tagline">Our design powerhouse.</p>
+                        <p>Fusion 360® is a powerful cloud-based CAD/CAM software that enables seamless design and manufacturing workflows. With its intuitive interface and robust feature set, it empowers users to create, simulate, and manufacture innovative products with ease.</p>
                     </div>
-                    <img src="/images/fusion360.png" alt="Fusion 360" class="grid-img">
+                    <img src="/images/fusion.jpg" alt="Fusion 360" class="grid-img">
                 </div>
+
+                <line class="divider"></line>
 
                 <div class="grid-item">
                     <div class="grid-text">
                         <h2>Handy Tools</h2>
-                        <p class="tagline"><br>Our trusty tools.</p>
-                        <p style="font-size: 22px;"><br>A collection of essential tools for maintaining and operating our 3D printing equipment. From basic maintenance supplies to specialized accessories, we have everything you need to keep your setup running smoothly.</p>
-                        
+                        <p class="tagline">Our trusty tools.</p>
+                        <p>A collection of essential tools for maintaining and operating our 3D printing equipment. From basic maintenance supplies to specialized accessories, we have everything you need to keep your setup running smoothly.</p>
                     </div>
-                    <img src="/images/handytools.png" alt="Handy Tools" class="grid-img">
+                    <img src="/images/handytools.jpg" alt="Handy Tools" class="grid-img">
                 </div>
 
             </div>
 
-            <br>
             <a href="/contact" class="feature-cta">Get In Touch</a>
-            <br>
-        </div>
-                
+
+            <p class="autodesk-disclaimer">
+                "Autodesk, the Autodesk logo, and Fusion 360 are registered trademarks or trademarks of Autodesk, Inc., and/or its subsidiaries and/or affiliates in the USA and other countries."
+            </p>
 
         </div>
     </section>
-    <span>
-    <p style="font-size: 12px; color: #666; text-align: center; padding: 20px;"><br>"Autodesk, the Autodesk logo, and Fusion 360 are registered trademarks or trademarks of Autodesk, Inc., and/or its subsidiaries and/or affiliates in the USA and other countries."</p><br>
-    </span>
-    <Footer />
 
-    <script is:inline src="/finical3d-scripts.js"></script>
-</body>
-</html>
+</Layout>
 
 <style>
     .about-hero {
@@ -143,21 +118,42 @@ import Nav from '../components/Nav.astro';
         max-width: 800px;
     }
 
-    .feature-highlights {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-        margin-bottom: 40px;
+    .intro-block {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .intro-block .label {
+        font-size: 30px;
+        color: var(--accent);
+    }
+
+    .intro-block h2 {
+        font-size: 30px;
+        margin-top: 20px;
+    }
+
+    .intro-block p {
+        font-size: 22px;
+        margin-top: 15px;
+    }
+
+   .feature-cta {
+    display: inline-block !important;
+    width: auto !important;
+    margin: 40px auto;
+    }  
+
+    .autodesk-disclaimer {
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+        padding: 20px;
     }
 
     @media (max-width: 768px) {
-        .feature-highlights {
-            grid-template-columns: 1fr;
-        }
-
         .about-hero-content {
             padding: 120px 20px 60px;
         }
-
     }
 </style>

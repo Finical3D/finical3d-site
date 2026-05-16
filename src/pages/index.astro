@@ -1,25 +1,12 @@
 ---
+import Layout from '../layouts/Layout.astro';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.astro';
 import FeaturedImage from '../components/FeaturedImage.astro';
 import Contactform from '../components/Contact-form.astro';
 
 ---
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finical 3D - 3D Innovation</title>
-    <link rel="stylesheet" href="/finical3d-main.css">
-
-</head>
-<body>
-    
-    <Nav />
-
+<Layout title="Finical 3D - Custom 3D Printing and CAD Design">
 
     <section class="hero" id="home">
         <div class="hero-bg"></div>
@@ -27,7 +14,7 @@ import Contactform from '../components/Contact-form.astro';
             <div class="hero-left">
                 <h1 class="hero-title">
                     <span class="line"><span>Custom</span></span>
-                    <span class="line"><span class="accent">3D Design</span></span>
+                    <span class="line"><span class="accent"><span class="logo-colors">3D</span> Design</span></span>
                     <span class="line"><span>Solutions</span></span>
                 </h1>
                 <p class="hero-description">
@@ -48,7 +35,7 @@ import Contactform from '../components/Contact-form.astro';
                     </div>
                 </div>
                 <div class="cta-group">
-                    <a href="/tools" class="cta-button primary">Explore Our Tools</a>
+                    <a href="/contact" class="cta-button primary">Enquire Now</a>
                     <a href="/about" class="cta-button outline">About Us</a>
                 </div>
             </div>
@@ -57,13 +44,13 @@ import Contactform from '../components/Contact-form.astro';
                 <div class="hero-image-wrapper">
                     <div class="hero-carousel">
                         <div class="carousel-slide active">
-                            <img src="images/3dprint2.png">
+                            <img src="images/3dprint2.jpg">
                         </div>
                         <div class="carousel-slide">
-                            <img src="images/3dprint1.png">
+                            <img src="images/3dprint1.jpg">
                         </div>
                         <div class="carousel-slide">
-                            <img src="images/3dprint3.png">
+                            <img src="images/3dprint3.jpg">
                         </div>
                         <div class="carousel-overlay"></div>
                         <div class="carousel-indicators">
@@ -121,9 +108,4 @@ import Contactform from '../components/Contact-form.astro';
     <div class="contact-compact">
         <Contactform />
     </div>
-  
-    <Footer />
-
-    <script is:inline src="/finical3d-scripts.js"></script>
-</body>
-</html>
+</Layout>

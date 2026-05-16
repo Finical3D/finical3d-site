@@ -1,26 +1,15 @@
 ---
-const title = "About Finical 3D";
-import Footer from '../components/Footer.astro';
+import Layout from '../layouts/Layout.astro';
 import FeaturedImage from '../components/FeaturedImage.astro';
-import Nav from '../components/Nav.astro';
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <link rel="stylesheet" href="/finical3d-main.css">
-</head>
-<body>
-    <Nav />
+<Layout title="Sustainability - Finical 3D">
 
     <section class="about-hero">
         <div class="hero-bg"></div>
         <div class="about-hero-content">
             <h1 class="hero-title">
-                <span class="line" ><span>Sustainability</span></span>
+                <span class="line"><span>Sustainability</span></span>
                 <span class="line"><span>at</span></span>
                 <span class="line"><span class="accent">Finical 3D</span></span>
             </h1>
@@ -37,18 +26,15 @@ import Nav from '../components/Nav.astro';
                 <div class="featured-content">
                     <span class="label">Sustainability Practices</span>
                     <h2>Our Commitment</h2>
-                    <p> Our commitment to sustainability includes using recycled materials, minimizing waste, and optimizing energy efficiency in our operations.
-                3D Print supports and failed prints are kept and recycled into more 3D models by pouring into moulds. we also repurpose waste material into new filament, and we are continuously exploring innovative ways to reduce our environmental impact while delivering high-quality products to our customers.</p>
+                    <p>Our commitment to sustainability includes using recycled materials, minimizing waste, and optimizing energy efficiency in our operations. 3D print supports and failed prints are kept and recycled into more 3D models by pouring into moulds. We also repurpose waste material into new filament, and we are continuously exploring innovative ways to reduce our environmental impact while delivering high-quality products to our customers.</p>
                     <h2>Our Goals</h2>
-                    <p>We aim to offer a recycling service for 3D prints and failed prints, allowing customers to return their waste material to us for processing into new filament. This initiative is part of our broader vision
-                         to move towards a fully circular economy in our 3D printing operations, where waste is minimized and resources are utilized to their fullest potential.</p>
+                    <p>We aim to offer a recycling service for 3D prints and failed prints, allowing customers to return their waste material to us for processing into new filament. This initiative is part of our broader vision to move towards a fully circular economy in our 3D printing operations, where waste is minimized and resources are utilized to their fullest potential.</p>
                     <img src="/images/clean.avif" alt="Cleanup" style="width: 150px; border-radius: 50%; margin: 20px 0;">
                     <p>One cleaner print for a greener future.</p>
                     <a href="/#contact" class="feature-cta">Get In Touch</a>
                 </div>
-                
-               <FeaturedImage /> 
 
+                <FeaturedImage />
             </div>
 
             <div class="feature-highlights" style="margin-top: 60px;">
@@ -87,11 +73,7 @@ import Nav from '../components/Nav.astro';
         </div>
     </section>
 
-    <Footer />
-
-    <script is:inline src="/finical3d-scripts.js"></script>
-</body>
-</html>
+</Layout>
 
 <style>
     .about-hero {
@@ -116,7 +98,6 @@ import Nav from '../components/Nav.astro';
         overflow: visible;
     }
 
-    /* Use :global to escape Astro scoping and override the global CSS */
     :global(.about-hero .hero-title) {
         font-size: clamp(28px, 6vw, 90px);
         text-align: center;
