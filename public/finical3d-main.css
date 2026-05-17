@@ -406,6 +406,7 @@ nav.scrolled {
 
 	.featured-content {
 		padding: 30px;
+		padding-bottom: 0;
 	}
 
 	.featured-content h2 {
@@ -1470,6 +1471,10 @@ nav.scrolled {
 	background: var(--bg-section);
 }
 
+.contact-compact {
+	margin: -80px auto !important;
+}
+
 .contact-container {
 	max-width: 1400px;
 	margin: 0 auto;
@@ -2071,8 +2076,7 @@ footer {
 
 	.featured-content {
 		text-align: center;
-		margin-bottom: 30px;
-		padding-top: 0;
+		padding-top: 0 !important;
 	}
 
 	.featured-content h2 {
