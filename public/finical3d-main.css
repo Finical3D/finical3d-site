@@ -2089,6 +2089,10 @@ footer {
 		font-size: 14px;
 	}
 
+	.featured-image-section {
+	display: none !important;
+	}
+
 	/* Horizontally scrollable highlight cards */
 	.feature-highlights {
 		display: flex !important;
@@ -2194,7 +2198,7 @@ footer {
 	.contact-container {
 		max-width: 1400px;
 		margin: 0 auto;
-		padding-top:40px;
+		padding-top:30px;
 	}
 
 	.contact-header {
@@ -2505,7 +2509,7 @@ footer {
         grid-template-columns: repeat(3, 1fr) !important;
         overflow-x: hidden !important;
         gap: 20px;
-        padding: 0 0px 30px;
+        padding: 0 0px 20px;
 		height: auto;
 		width: 100%;
     }
