@@ -39,6 +39,7 @@ section {
 
 body {
 	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 22px;
 	background: var(--bg-dark);
 	color: var(--text-light);
 	/* Prevent horizontal overflow on any phone */
@@ -419,7 +420,7 @@ nav.scrolled {
 	}
 
 	.featured-image-section {
-		height: 400px;
+		height: auto;
 	}
 
 	.testimonials-grid {
@@ -638,6 +639,8 @@ nav.scrolled {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: auto;
+	display: inline !important;
+	white-space: nowrap;
 }
 
 .hero-title .accent {
@@ -1166,7 +1169,7 @@ nav.scrolled {
 	color: var(--accent);
 	text-transform: uppercase;
 	letter-spacing: 3px;
-	font-size: 12px;
+	font-size: 22px;
 	margin-bottom: 20px;
 	display: block;
 }
@@ -1175,7 +1178,7 @@ nav.scrolled {
 	color: var(--text-muted);
 	line-height: 1.8;
 	margin-bottom: 30px;
-	font-size: 16px;
+	font-size: 22px;
 }
 
 .feature-highlights {
@@ -1251,6 +1254,7 @@ nav.scrolled {
 	transition: transform 0.3s ease;
 	position: relative;
 	overflow: hidden;
+	height:100%;
 }
 
 .featured-img img {

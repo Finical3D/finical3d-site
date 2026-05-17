@@ -11,7 +11,7 @@ import FeaturedImage from '../components/FeaturedImage.astro';
             <h1 class="hero-title">
                 <span class="line"><span>Sustainability</span></span>
                 <span class="line"><span>at</span></span>
-                <span class="line"><span class="accent">Finical 3D</span></span>
+                <span class="line"><span class="accent">Finical&nbsp;<span class="logo-colors">3D</span></span></span>
             </h1>
             <p class="hero-description">
                 Eco-friendly practices in our 3D printing and design processes.
@@ -29,7 +29,7 @@ import FeaturedImage from '../components/FeaturedImage.astro';
                     <p>Our commitment to sustainability includes using recycled materials, minimizing waste, and optimizing energy efficiency in our operations. 3D print supports and failed prints are kept and recycled into more 3D models by pouring into moulds. We also repurpose waste material into new filament, and we are continuously exploring innovative ways to reduce our environmental impact while delivering high-quality products to our customers.</p>
                     <h2>Our Goals</h2>
                     <p>We aim to offer a recycling service for 3D prints and failed prints, allowing customers to return their waste material to us for processing into new filament. This initiative is part of our broader vision to move towards a fully circular economy in our 3D printing operations, where waste is minimized and resources are utilized to their fullest potential.</p>
-                    <img src="/images/clean.avif" alt="Cleanup" style="width: 150px; border-radius: 50%; margin: 20px 0;">
+                    <!--<img src="/images/clean.avif" alt="Cleanup" style="width: 150px; border-radius: 50%; margin: 20px 0;">-->
                     <p>One cleaner print for a greener future.</p>
                     <a href="/#contact" class="feature-cta">Get In Touch</a>
                 </div>
@@ -91,9 +91,15 @@ import FeaturedImage from '../components/FeaturedImage.astro';
         text-align: center;
     }
 
-    :global(.about-hero .hero-title .line span) {
-        display: block !important;
+    :global(.about-hero .hero-title .line > span) {
+        display: inline-block !important;
         text-align: center;
+        white-space: nowrap;
+    }
+
+    :global(.about-hero .hero-title .logo-colors) {
+        display: inline !important;
+        white-space: nowrap;
     }
 
     .feature-highlights {
