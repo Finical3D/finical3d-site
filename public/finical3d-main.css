@@ -2520,6 +2520,7 @@ footer {
 	    .highlight-title {
         font-size: 12px;
 		word-break: break-word;
+		margin-bottom: 0;
 	}
 	    .highlight-box {
 		padding-bottom: 0;
