@@ -75,7 +75,19 @@
                         <label for="message">Message</label>
                         <textarea id="message" name="message" placeholder="Tell us more about your project — dimensions, purpose, references..." required></textarea>
                     </div>
-
+                        <div class="form-group">
+                            <label for="file">Attach File <span class="optional-label">(Optional)</span></label>
+                            <div class="file-upload-wrapper">
+                                <input type="file" id="file" name="attachment" accept=".stl,.obj,.step,.stp,.f3d,.3mf,.iges,.igs,.pdf,.png,.jpg,.jpeg" class="file-input">
+                                <div class="file-upload-display">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-320v-326L336-542l-56-58 200-200 200 200-56 58-104-104v326h-80ZM240-160q-33 0-56.5-23.5T160-240v-120h80v120h480v-120h80v120q0 33-23.5 56.5T720-160H240Z"/></svg>
+                                    <span class="file-upload-text">Drop your file here or click to browse</span>
+                                    <span class="file-upload-types">STL, OBJ, STEP, F3D, 3MF, IGES, PDF, PNG, JPG</span>
+                                </div>
+                            </div>
+                            <span class="file-name-display"></span>
+                        </div>
+                        <div class="h-captcha" data-captcha="true" data-theme="dark" style="text-align: center;"></div>
                     <button type="submit" class="form-submit">Send Message</button>
                 </form>
             </div>
@@ -172,6 +184,7 @@
             });
         }
     </script>
+    <script src="https://web3forms.com/client/script.js" async defer></script>
 </section>
 
 <style>
