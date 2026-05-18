@@ -2,7 +2,7 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
-const { title = 'Finical 3D' } = Astro.props;
+const { title, description = 'Finical 3D — Custom 3D printing, scanning and CAD design services in Christchurch, New Zealand.' } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -20,9 +20,43 @@ const { title = 'Finical 3D' } = Astro.props;
         gtag('js', new Date());
         gtag('config', 'G-FN1PWJ53VP');
     </script>
+    <script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Finical 3D",
+  "description": "Custom 3D printing, scanning and CAD design services in Christchurch, New Zealand",
+  "url": "https://finical3d.co.nz",
+  "telephone": "+64210552919",
+  "email": "matt@finical3d.co.nz",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Christchurch",
+    "addressRegion": "Canterbury",
+    "addressCountry": "NZ"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -43.5321,
+    "longitude": 172.6362
+  },
+  "openingHours": "Mo-Fr 09:00-17:00",
+  "priceRange": "$$",
+  "image": "https://finical3d.co.nz/finical3d_logo-Long.png"
+}
+</script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content={description}>
+    <meta name="keywords" content="3D printing Christchurch, 3D scanning NZ, CAD design New Zealand, custom 3D prints, reverse engineering NZ">
+
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:url" content="https://finical3d.co.nz">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://finical3d.co.nz/images/og-image.jpg">
+
     <title>{title}</title>
 
     <!-- Google Fonts -->
