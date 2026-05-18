@@ -10,9 +10,20 @@ export function getStaticPaths() {
 }
 
 const { product } = Astro.props;
+
+let stripeLinksJson = '';
+let initialHref = '#';
+
+if (product.stripeLinks) {
+    stripeLinksJson = JSON.stringify(product.stripeLinks);
+    const firstMaterial = product.materials && product.materials[0];
+    initialHref = firstMaterial && firstMaterial in product.stripeLinks ? product.stripeLinks[firstMaterial as keyof typeof product.stripeLinks] : '#';
+} else if (product.stripeLink) {
+    initialHref = product.stripeLink;
+}
 ---
 
-<Layout title={`${product.name} - Finical 3D Shop`} noindex="{true}">
+<Layout title={`${product.name} - Finical 3D Shop`} noindex={true}>
     <section class="product-page">
         <div class="product-container">
             <div class="product-image">
@@ -21,7 +32,7 @@ const { product } = Astro.props;
             <div class="product-details">
                 <a href="/shop" class="product-back">← Back to Shop</a>
 
-                <div class="stock-badge {product.inStock ? 'in-stock' : 'out-of-stock'}">
+                <div class={`stock-badge ${product.inStock ? 'in-stock' : 'out-of-stock'}`}>
                     {product.inStock ? 'In Stock' : 'Out of Stock'}
                 </div>
 
@@ -29,9 +40,28 @@ const { product } = Astro.props;
                 <p class="product-price">${product.price.toFixed(2)} NZD</p>
 
                 <div class="product-meta">
-                    <div class="product-meta-item">Material <span>{product.material}</span></div>
                     <div class="product-meta-item">Scale <span>{product.scale}</span></div>
                 </div>
+
+                {product.materials?.length > 1 ? (
+                    <div class="form-group material-selector">
+                        <label>Material</label>
+                        <div class="material-buttons">
+                            {product.materials.map((material, index) => (
+                                <button
+                                    type="button"
+                                    class={`material-btn ${index === 0 ? 'active' : ''}`}
+                                    data-material={material}
+                                >
+                                    {material}
+                                </button>
+                            ))}
+                        </div>
+                        <input type="hidden" id="selectedMaterial" value={product.materials[0]}>
+                    </div>
+                ) : (
+                    <div class="product-meta-item">Material <span>{product.materials?.[0]}</span></div>
+                )}
 
                 <div class="product-tags">
                     {product.tags?.map(tag => (
@@ -43,7 +73,9 @@ const { product } = Astro.props;
 
                 <div class="product-buy">
                     <a 
-                        href={product.stripeLink} 
+                        id="buyButton"
+                        href={initialHref}
+                        data-stripe-links={stripeLinksJson}
                         class={`cta-button primary ${!product.inStock ? 'out-of-stock' : ''}`}
                         target="_blank"
                     >
@@ -55,3 +87,27 @@ const { product } = Astro.props;
         </div>
     </section>
 </Layout>
+
+<script is:inline>
+    document.querySelectorAll('.material-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const material = btn.dataset.material;
+            const selectedMaterial = document.getElementById('selectedMaterial');
+            if (selectedMaterial) selectedMaterial.value = material;
+
+            const buyButton = document.getElementById('buyButton');
+            if (!buyButton || !material) return;
+            
+            const raw = buyButton.dataset.stripeLinks;
+            if (!raw) return;
+            
+            const stripeLinks = JSON.parse(raw);
+            if (Object.prototype.hasOwnProperty.call(stripeLinks, material)) {
+                buyButton.href = stripeLinks[material];
+            }
+        });
+    });
+</script>

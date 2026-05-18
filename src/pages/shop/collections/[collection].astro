@@ -1,0 +1,76 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { products, collections } from '../../../data/products.js';
+
+export function getStaticPaths() {
+    return collections.map(collection => ({
+        params: { collection: collection.slug },
+        props: { 
+            collection,
+            collectionProducts: products.filter(p => p.collections?.includes(collection.slug))
+        }
+    }));
+}
+
+const { collection, collectionProducts } = Astro.props;
+---
+
+<Layout title={`${collection.name} - Finical 3D Shop`} noindex={true}>
+
+    <section class="shop-hero">
+        <div class="about-hero-content">
+            <h1 class="hero-title">
+                <span class="line"><span class="accent">{collection.name}</span></span>
+            </h1>
+            <p class="hero-description">{collection.description}</p>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="featured-container">
+            {collectionProducts.length > 0 ? (
+                <div class="shop-grid">
+                    {collectionProducts.map(product => (
+                        <a href={`/shop/${product.slug}`} class="shop-card">
+                            <div class="shop-card-image">
+                                <img src={product.image} alt={product.name}>
+                            </div>
+                            <div class="shop-card-content">
+                                <h3>{product.name}</h3>
+                                <p class="shop-card-material">{product.materials?.join(' / ')} · {product.scale}</p>
+                                <p class="shop-card-price">${product.price.toFixed(2)} NZD</p>
+                            </div>
+                        </a>
+                    ))}
+                </div>
+            ) : (
+                <p class="empty-collection">No products in this collection yet — check back soon.</p>
+            )}
+        </div>
+    </section>
+
+</Layout>
+
+<style>
+    .shop-hero {
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 140px 50px 40px;
+    }
+
+    .empty-collection {
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 18px;
+        padding: 60px 0;
+    }
+
+    @media (max-width: 768px) {
+        .shop-hero {
+            padding: 100px 20px 30px;
+        }
+    }
+</style>

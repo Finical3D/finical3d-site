@@ -1,23 +1,37 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { products } from '../../data/products.js';
+import { products, collections } from '../../data/products.js';
 ---
 
-<Layout title="Shop - Finical 3D" noindex="{true}">
+<Layout title="Shop - Finical 3D" noindex={true}>
 
-<section class="shop-hero">
-    <div class="about-hero-content">
-<h1 class="hero-title">
-    <span class="line"><span class="accent">Finical <span class="logo-colors">Shop</span></span></span>
-</h1>
-        <p class="hero-description">
-            Professionally printed miniatures and models, printed to order.
-        </p>
-    </div>
-</section>
+    <section class="shop-hero">
+        <div class="about-hero-content">
+            <h1 class="hero-title">
+                <span class="line"><span>Our <span class="accent">Shop</span></span></span>
+            </h1>
+            <p class="hero-description">
+                Professionally printed miniatures and models, ready to ship.
+            </p>
+        </div>
+    </section>
 
     <section class="featured">
         <div class="featured-container">
+
+            <div class="collections-grid">
+                {collections.map(collection => (
+                    <a href={`/shop/collections/${collection.slug}`} class="collection-card">
+                        <h3>{collection.name}</h3>
+                        <p>{collection.description}</p>
+                        <span class="collection-count">
+                            {products.filter(p => p.collections?.includes(collection.slug)).length} products
+                        </span>
+                    </a>
+                ))}
+            </div>
+
+            <h2 class="shop-all-title">All Products</h2>
             <div class="shop-grid">
                 {products.map(product => (
                     <a href={`/shop/${product.slug}`} class="shop-card">
@@ -26,30 +40,14 @@ import { products } from '../../data/products.js';
                         </div>
                         <div class="shop-card-content">
                             <h3>{product.name}</h3>
-                            <p class="shop-card-material">{product.material} · {product.scale}</p>
+                            <p class="shop-card-material">{product.materials?.join(' / ')} · {product.scale}</p>
                             <p class="shop-card-price">${product.price.toFixed(2)} NZD</p>
                         </div>
                     </a>
                 ))}
             </div>
+
         </div>
     </section>
 
 </Layout>
-
-<style>
-    .shop-hero {
-        background: #000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 20px 50px 5px;
-    }
-
-    @media (max-width: 768px) {
-        .shop-hero {
-            padding: 10px 20px 5px;
-        }
-    }
-</style>
