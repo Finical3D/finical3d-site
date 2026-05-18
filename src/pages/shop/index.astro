@@ -8,7 +8,7 @@ import { products, collections } from '../../data/products.js';
     <section class="shop-hero">
         <div class="about-hero-content">
             <h1 class="hero-title">
-                <span class="line"><span>Our <span class="accent">Shop</span></span></span>
+                <span class="line"><span class="accent">Finical</span><span class="logo-colors">Shop</span></span>
             </h1>
             <p class="hero-description">
                 Professionally printed miniatures and models, ready to ship.
@@ -51,3 +51,51 @@ import { products, collections } from '../../data/products.js';
     </section>
 
 </Layout>
+
+<style>
+    .shop-hero {
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 70px 50px 0;
+        width: 100%;
+    }
+
+    .shop-hero .about-hero-content {
+        text-align: center;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .shop-hero .hero-title {
+        text-align: center;
+        width: 100%;
+    }
+
+    .shop-hero .hero-description {
+        text-align: center;
+    }
+
+    @media (max-width: 768px) {
+        .shop-hero {
+            padding: 10px 20px 0;
+            text-align: center;
+        }
+
+        .collection-card h3 {
+            text-align: center;
+            margin-bottom: 0px;
+        }
+        
+        .collection-card{
+            text-align: center;
+        }
+
+        .collection-card p {
+        display: none;
+    }
+    }
+</style>

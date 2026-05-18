@@ -59,13 +59,23 @@ const { collection, collectionProducts } = Astro.props;
         justify-content: center;
         text-align: center;
         padding: 140px 50px 40px;
+        width: 100%;
     }
 
-    .empty-collection {
+    .shop-hero .about-hero-content {
         text-align: center;
-        color: var(--text-muted);
-        font-size: 18px;
-        padding: 60px 0;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .shop-hero .hero-title {
+        text-align: center;
+        width: 100%;
+    }
+
+    .shop-hero .hero-description {
+        text-align: center;
     }
 
     @media (max-width: 768px) {
