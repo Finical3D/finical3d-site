@@ -44,4 +44,6 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
+Disallow: /shop/
+
 Sitemap: https://finical3d.co.nz/sitemap-index.xml

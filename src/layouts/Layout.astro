@@ -2,12 +2,13 @@
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
-const { title, description = 'Finical 3D — Custom 3D printing, scanning and CAD design services in Christchurch, New Zealand.' } = Astro.props;
+const { title, description = 'Finical 3D — Custom 3D printing, scanning and CAD design services in Christchurch, New Zealand.', noindex = false } = Astro.props;
 ---
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {noindex && <meta name="robots" content="noindex, nofollow">}
     <script>
         declare function gtag(...args: any[]): void;
         declare var dataLayer: any[];

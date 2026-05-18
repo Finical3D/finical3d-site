@@ -11,6 +11,7 @@ const currentPath = Astro.url.pathname;
         </a>
         <ul class="nav-links">
             <li><a href="/" class:list={['nav-link', { active: currentPath === '/' }]}>Home</a></li>
+            <!--<li><a href="/shop" class:list={['nav-link', { active: currentPath.startsWith('/shop') }]}>Shop</a></li>-->
             <li><a href="/about" class:list={['nav-link', { active: currentPath === '/about' }]}>About</a></li>
             <li><a href="/tools" class:list={['nav-link', { active: currentPath === '/tools' }]}>Our Tech</a></li>
             <li><a href="/sustainability" class:list={['nav-link', { active: currentPath === '/sustainability' }]}>Sustainability</a></li>
@@ -27,6 +28,7 @@ const currentPath = Astro.url.pathname;
 <div class="mobile-nav" id="mobileNav">
     <ul class="mobile-nav-links">
         <li><a href="/" class:list={[{ active: currentPath === '/' }]}>Home</a></li>
+        <!--<li><a href="/shop" class:list={[{ active: currentPath.startsWith('/shop') }]}>Shop</a></li>-->
         <li><a href="/about" class:list={[{ active: currentPath === '/about' }]}>About</a></li>
         <li><a href="/tools" class:list={[{ active: currentPath === '/tools' }]}>Our Tech</a></li>
         <li><a href="/sustainability" class:list={[{ active: currentPath === '/sustainability' }]}>Sustainability</a></li>

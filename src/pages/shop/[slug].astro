@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { products } from '../../data/products.js';
+
+export function getStaticPaths() {
+    return products.map(product => ({
+        params: { slug: product.slug },
+        props: { product }
+    }));
+}
+
+const { product } = Astro.props;
+---
+
+<Layout title={`${product.name} - Finical 3D Shop`} noindex="{true}">
+    <section class="product-page">
+        <div class="product-container">
+            <div class="product-image">
+                <img src={product.image} alt={product.name}>
+            </div>
+            <div class="product-details">
+                <a href="/shop" class="product-back">← Back to Shop</a>
+
+                <div class="stock-badge {product.inStock ? 'in-stock' : 'out-of-stock'}">
+                    {product.inStock ? 'In Stock' : 'Out of Stock'}
+                </div>
+
+                <h1>{product.name}</h1>
+                <p class="product-price">${product.price.toFixed(2)} NZD</p>
+
+                <div class="product-meta">
+                    <div class="product-meta-item">Material <span>{product.material}</span></div>
+                    <div class="product-meta-item">Scale <span>{product.scale}</span></div>
+                </div>
+
+                <div class="product-tags">
+                    {product.tags?.map(tag => (
+                        <span class="product-tag">{tag}</span>
+                    ))}
+                </div>
+
+                <p class="product-description">{product.description}</p>
+
+                <div class="product-buy">
+                    <a 
+                        href={product.stripeLink} 
+                        class={`cta-button primary ${!product.inStock ? 'out-of-stock' : ''}`}
+                        target="_blank"
+                    >
+                        {product.inStock ? 'Buy Now' : 'Out of Stock'}
+                    </a>
+                    <p class="product-note">Secure checkout via Stripe · Ships within 3–5 business days · NZ only</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
